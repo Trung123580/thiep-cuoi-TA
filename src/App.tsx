@@ -1,11 +1,10 @@
 import { gsap } from 'gsap'
-import { ScrollTrigger, ScrollSmoother, Observer } from 'gsap/all'
-import { useEffect, useRef } from 'react'
+import { ScrollTrigger, ScrollSmoother } from 'gsap/all'
+import { useEffect } from 'react'
 import { useGSAP } from '@gsap/react'
-
+import SplitTextUI from './components/ui/SplitTextUI'
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP)
 function App() {
-  const main = useRef<any>()
   useEffect(() => {
     ScrollSmoother.create({
       content: '#smooth-content',
@@ -15,40 +14,83 @@ function App() {
     })
   }, [ScrollSmoother])
 
-  useGSAP(
-    () => {
-      const boxes = gsap.utils.toArray('.box')
-      boxes.forEach((box: any) => {
-        gsap.to(box, {
-          x: 150,
-          scrollTrigger: {
-            trigger: box,
-            start: 'bottom bottom',
-            end: 'top 20%',
-            scrub: true,
-            // markers: true,
-          },
+  // useGSAP(
+  //   () => {
+  //     const boxes = gsap.utils.toArray('.box')
+  //     boxes.forEach((box: any) => {
+  //       gsap.to(box, {
+  //         x: 150,
+  //         scrollTrigger: {
+  //           trigger: box,
+  //           start: 'top bottom ',
+  //           end: 'top 0%',
+  //           scrub: true,
+  //         },
+  //       })
+  //     })
+  //   },
+  //   { scope: main }
+  // )
+
+  // useEffect(() => {
+  //   const boxes = gsap.utils.toArray('.section')
+  //   boxes.forEach((box: any, i) => {
+  //     gsap.to(box, {
+  //       x: 150,
+  //       animationDelay: i * 0.5,
+  //       scrollTrigger: {
+  //         trigger: box,
+  //         start: 'top bottom ',
+  //         end: 'top 0%',
+  //         scrub: true,
+  //       },
+  //     })
+  //   })
+  // })
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('.section')
+    console.log(sections)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show')
+          } else {
+            entry.target.classList.remove('show')
+          }
         })
-      })
-    },
-    { scope: main }
-  )
+      },
+      {
+        threshold: 1,
+        rootMargin: '0px 0px 0px 0px',
+      }
+    )
+    sections.forEach((section) => observer.observe(section))
+  }, [])
 
   return (
-    <section className='smooth-wrapper'>
+    <div className='smooth-wrapper'>
       <div className='smooth-content'>
-        <section className='h-screen bg-red-400'>
-          <div className='section flex-center column' ref={main}>
-            <div className='box gradient-blue'>box</div>
-            <div className='box gradient-blue'>box</div>
-            <div className='box gradient-blue'>box</div>
-          </div>
-        </section>
-        <section className='h-screen bg-yellow-400'></section>
-        <section className='h-screen bg-blue-200'></section>
-        <section className='h-screen bg-green-400'></section>
+        <div className=''>
+          {/* relative -left-[150px] */}
+          <section className='h-screen section section-1'>
+            <SplitTextUI classGsap='title' className='text-9xl font-bold'>
+              Hello World
+            </SplitTextUI>
+          </section>
+          <section className='h-screen section section-2 bg-yellow-400'></section>
+          <section className='h-screen section section-3 bg-blue-200'></section>
+          <section className='h-screen section section-4 bg-green-400'></section>
+          <section className='h-screen section section-5'>
+            <SplitTextUI classGsap='title' className='text-9xl font-bold'>
+              Hello World
+            </SplitTextUI>
+          </section>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 
