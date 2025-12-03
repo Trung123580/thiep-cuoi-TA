@@ -13,9 +13,16 @@ interface Props {
   className?: string
   delayText?: number
   children: React.ReactNode
+  duration?: number
 }
 
-const SplitTextUI = ({ classGsap, className, delayText = 0, children }: Props) => {
+const SplitTextUI = ({
+  classGsap,
+  className,
+  delayText = 0,
+  children,
+  duration = 1.8,
+}: Props) => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
@@ -42,7 +49,7 @@ const SplitTextUI = ({ classGsap, className, delayText = 0, children }: Props) =
     gsap.from(split.chars, {
       yPercent: 100,
       opacity: 0,
-      duration: 1.8,
+      duration: duration,
       ease: 'expo.out',
       stagger: 0.05,
       delay: delayText,
@@ -51,7 +58,7 @@ const SplitTextUI = ({ classGsap, className, delayText = 0, children }: Props) =
     return () => {
       split.revert()
     }
-  }, [classGsap, delayText])
+  }, [classGsap, delayText, duration])
 
   return (
     <div ref={containerRef} className={className}>

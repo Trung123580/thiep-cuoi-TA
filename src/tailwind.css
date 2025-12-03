@@ -344,14 +344,29 @@
   background-clip: text;
   color: transparent;
 }
+
+@utility text-title {
+  @apply text-9xl font-bold
+}
+
+@utility text-description {
+  @apply text-3xl font-semibold
+}
+
 .section {
-  translate: 0 -100%;
-  opacity: 1;
   transition: 800ms ease;
-  height: 700px;
+  translate: -12.6% 0;
+  opacity: 0;
+  /* animation-timeline: view(); */
+  /* animation-range: entry 0; */
+  position: relative;
+  left: -150px;
+  &:not(.show) {
+    translate: 0 0;
+  }
 }
 
 .section.show{
   opacity: 1;
-  translate: 0 0;
+  translate: 12.6% 0;
 }
