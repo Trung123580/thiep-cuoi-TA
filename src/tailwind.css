@@ -1,8 +1,16 @@
 @import 'tailwindcss';
+@import './font/font.css';
 
 @theme {
-  --color-dark: '#1a202c',
-  --color-primary: '#007bff',
+  --color-dark: #1a202c;
+  --color-red: #a50207;
+  --color-primary: #007bff;
+  --font-UTMBryantLG: 'UTM BryantLG', sans-serif;
+  --font-UVFAphroditePro: 'UVF Aphrodite Pro', sans-serif;
+  --font-SVNAstronout: 'SVN-Astronout', sans-serif;
+  --text-shadow-md: 0 10px 10px #000;
+  --text-shadow-sm: 0 2px 5px #000;
+
   --animate-title: title-animation 0.8s ease forwards;
   --animate-TranslateY: TranslateYAnimation 1s ease infinite;
   --animate-logoPulse: logoPulse 1s infinite alternate;
@@ -65,22 +73,22 @@
       transform: translateX(0);
     }
   }
-  
-@keyframes fadeInUpShow {
-  /* lên xuống */
-  0% {
-    opacity: 0.1;
-    -webkit-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    transform: translateY(20px);
+
+  @keyframes fadeInUpShow {
+    /* lên xuống */
+    0% {
+      opacity: 0.1;
+      -webkit-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
   }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
   @keyframes fadeInRight {
     /* phải trái */
     0% {
@@ -264,6 +272,7 @@
   animation-iteration-count: infinite, infinite;
   animation-play-state: running, running;
 }
+/* 
 .snowflake:nth-of-type(0) {
   left: 1%;
   -webkit-animation-delay: 0s, 0s;
@@ -295,7 +304,7 @@
   animation-delay: 8s, 3s;
 }
 .snowflake:nth-of-type(6) {
-  left: 60%;
+  left: 61%;
   -webkit-animation-delay: 6s, 2s;
   animation-delay: 6s, 2s;
 }
@@ -325,10 +334,39 @@
   animation-delay: 4s, 2.5s;
 }
 .snowflake:nth-of-type(12) {
-  left: 90%;
+  left: 94%;
   -webkit-animation-delay: 3s, 1.5s;
   animation-delay: 3s, 1.5s;
-}
+} */
+/* .snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+} */
+
+/* .snowflake {
+  position: absolute;
+  top: -10%;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0.9;
+} */
+
+/* @keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0.2;
+  }
+} */
 
 @utility flex-center {
   @apply flex justify-center items-center;
@@ -338,27 +376,27 @@
   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 
-@utility text-grandient {
-  background: linear-gradient(to bottom, #000, #000);
+/* @utility text-grandient {
+  background: linear-gradient(to bottom, #fff, #fff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
+} */
 
 @utility text-title {
-  @apply text-9xl font-bold
+  @apply text-9xl font-bold;
 }
 
 @utility text-description {
-  @apply text-3xl font-semibold
+  @apply text-3xl font-semibold;
 }
-
-.section {
+/* animation-timeline: view(); */
+/* animation-range: entry 0; */
+/* .section {
   transition: 800ms ease;
   translate: -12.6% 0;
   opacity: 0;
-  /* animation-timeline: view(); */
-  /* animation-range: entry 0; */
+ 
   position: relative;
   left: -150px;
   &:not(.show) {
@@ -369,4 +407,13 @@
 .section.show{
   opacity: 1;
   translate: 12.6% 0;
+} */
+
+body {
+  @apply text-white;
+}
+@layer utilities {
+  button {
+    @apply cursor-pointer;
+  }
 }

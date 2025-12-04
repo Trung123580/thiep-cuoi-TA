@@ -2,20 +2,21 @@ import SplitTextUI from './ui/SplitTextUI'
 
 const Banner = () => {
   return (
-    <section className='relative h-[700px] section section-1' data-class='top'>
-      <div className='flex'>
-        {/* <img src='' alt='' /> */}
-        {/* <img src='' alt='' /> */}
-        {/* <img src='' alt='' /> */}
+    <section className='relative h-[650px] md:h-auto' data-class='top'>
+      <div className='ab-center w-full h-full bg-black/20'></div>
+      <div className='w-full h-full'>
+        <img src='/assets/banner.png' alt='' className='object-cover h-full' />
       </div>
-      <div className='ab-center top-[60%] text-center'>
-        <SplitTextUI classGsap='title' className='text-8xl font-bold '>
+      <div className='ab-center text-center top-[65%]'>
+        <SplitTextUI
+          classGsap='title'
+          className='text-[35vw] md:text-[300px] font-normal text-nowrap leading-[90px] md:leading-[250px] text-white font-SVNAstronout'>
           Hải lý & Tiến Anh
         </SplitTextUI>
         <SplitTextUI
           classGsap='description'
-          duration={2}
-          className='text-xl font-semibold'>
+          duration={0.3}
+          className='text-lg leading-6 md:text-xl font-semibold italic font-UTMBryantLG mt-14 text-wrap md:text-nowrap'>
           Ở thời điểm phù hợp nhất, mặc lên người bộ váy cưới đẹp nhất, gả cho người đáng
           tin cậy nhất
         </SplitTextUI>

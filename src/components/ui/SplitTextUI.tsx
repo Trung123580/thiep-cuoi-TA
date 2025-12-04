@@ -14,6 +14,7 @@ interface Props {
   delayText?: number
   children: React.ReactNode
   duration?: number
+  isRun?: boolean
 }
 
 const SplitTextUI = ({
@@ -22,12 +23,13 @@ const SplitTextUI = ({
   delayText = 0,
   children,
   duration = 1.8,
+  isRun = true,
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
     if (!containerRef.current) return
-
+    if (!isRun) return
     const target = containerRef.current.querySelector(
       `.${classGsap.replace('.', '')}`
     ) as HTMLElement
@@ -58,7 +60,7 @@ const SplitTextUI = ({
     return () => {
       split.revert()
     }
-  }, [classGsap, delayText, duration])
+  }, [classGsap, delayText, duration, isRun])
 
   return (
     <div ref={containerRef} className={className}>

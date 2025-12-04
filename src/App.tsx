@@ -5,6 +5,7 @@ import SplitTextUI from './components/ui/SplitTextUI'
 import Banner from './components/Banner'
 import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector, useAppStore } from './components/hooks/useStore'
+import WeddingDay from './components/WeddingDay'
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP)
 function App() {
   const {
@@ -135,9 +136,8 @@ function App() {
       <div className='smooth-content '>
         <div className=''>
           <Banner />
-          <section
-            className='h-[700px] section-2 bg-yellow-400'
-            data-class='left'></section>
+          <WeddingDay />
+
           <section
             className='h-[700px] section section-3 bg-blue-200'
             data-class='left'></section>
