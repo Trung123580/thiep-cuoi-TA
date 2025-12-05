@@ -1,10 +1,11 @@
+// hooks/useInViewport.ts
 import { useEffect, useState, useRef, type RefObject } from 'react'
 
 interface UseInViewportOptions {
-  threshold?: number | number[] // 0.0 -> 1.0 (hoặc mảng)
-  rootMargin?: string // ví dụ: "0px 0px -100px 0px"
-  triggerOnce?: boolean // chỉ true 1 lần duy nhất
-  freezeOnceVisible?: boolean // nếu true → khi đã visible thì giữ true mãi mãi
+  threshold?: number | number[]
+  rootMargin?: string
+  triggerOnce?: boolean
+  freezeOnceVisible?: boolean
 }
 
 function useInViewport(
@@ -29,10 +30,8 @@ function useInViewport(
 
         if (visible) {
           hasBeenVisible.current = true
-        } else {
-          hasBeenVisible.current = false
         }
-        // Logic xử lý theo các option
+
         if (freezeOnceVisible) {
           setIsInViewport(hasBeenVisible.current)
         } else if (triggerOnce) {
@@ -41,21 +40,19 @@ function useInViewport(
           setIsInViewport(visible)
         }
       },
-      {
-        threshold,
-        rootMargin,
-      }
+      { threshold, rootMargin }
     )
 
-    window.addEventListener('load', () => {
-      observer.observe(element)
-    })
+    // QUAN TRỌNG: observe NGAY LẬP TỨC, không đợi 'load'
+    observer.observe(element)
+
+    // Cleanup đúng cách
     return () => {
-      window.removeEventListener('load', () => {
-        observer.disconnect()
-      })
+      observer.unobserve(element)
+      observer.disconnect()
     }
-  }, [ref, threshold, rootMargin, triggerOnce, freezeOnceVisible, ref.current])
+  }, [ref, threshold, rootMargin, triggerOnce, freezeOnceVisible])
+  // Không bao giờ được thêm ref.current vào dependency!
 
   return isInViewport
 }
