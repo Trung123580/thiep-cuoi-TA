@@ -5,7 +5,8 @@ interface props {
 
 const Description = (props: props) => {
   return (
-    <h3 className={`font-UTMBryantLG text-[18px] font-bold ${props.className} `}>
+    <h3
+      className={`font-UTMBryantLG text-[4.5vw] md:text-[1.07vw] leading-5 md:leading-4 font-bold ${props.className} `}>
       {props.label}
     </h3>
   )

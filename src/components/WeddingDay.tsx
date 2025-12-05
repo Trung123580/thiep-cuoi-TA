@@ -17,7 +17,7 @@ const data = {
         date: 'Chủ Nhật, ngày 28 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 09 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Trai',
-        address: 'Thôn Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
+        address: 'Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
       },
       wedding: {
         title: 'TIỆC THÀNH HÔN NHÀ TRAI',
@@ -25,7 +25,7 @@ const data = {
         date: 'Thứ Hai, ngày 29 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 10 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Trai',
-        address: 'Thôn Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
+        address: 'Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
       },
     },
     bride: {
@@ -35,7 +35,7 @@ const data = {
         date: 'Thứ Bảy, ngày 27 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 08 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Gái',
-        address: 'Thôn Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
+        address: 'Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
       },
       wedding: {
         title: 'TIỆC THÀNH HÔN NHÀ GÁI',
@@ -43,7 +43,7 @@ const data = {
         date: 'Thứ Hai, ngày 29 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 10 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Gái',
-        address: 'Thôn Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
+        address: 'Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
       },
     },
     common: {
@@ -157,22 +157,25 @@ const WeddingDay = () => {
           </div>
           <div
             ref={refTop}
-            className={`flex-1 py-8 md:py-0 my-auto flex-center flex-col space-y-1 ${
+            className={`flex-1 py-8 md:px-0 px-1 md:py-0 my-auto flex-center flex-col space-y-2 ${
               inViewWeddingDay ? 'animate-fadeInRight' : ''
             }`}>
             <div
               className={`${
                 inViewTop ? 'animate-fadeInUpShow' : ''
               } animation-delay-0 opacity-0`}>
-              <Title label={common.greeting} className='uppercase font-normal' />
-              <Description label={common.guest} className='!text-xl text-primary' />
+              <Title
+                label={common.greeting}
+                className='uppercase md:text-[30px]! text-[26px]! font-normal'
+              />
+              <Description label={common.guest} className='text-2xl! text-primary' />
             </div>
             <div
               className={`${
                 inViewTop ? 'animate-fadeInUpShow' : ''
               } animate-delay-500 opacity-0`}>
               <Description label={common.inviteLine1} />
-              <Description label={common.inviteLine2} />
+              <Description label={common.inviteLine2} className='mt-1' />
             </div>
             <div
               className={`${
@@ -180,7 +183,7 @@ const WeddingDay = () => {
               } animation-delay-500 opacity-0`}>
               <Title
                 label={common.couple}
-                className='font-UVFAphroditePro animate-decorFloatReverse1s !text-4xl my-6 text-gray-700'
+                className='font-UVFAphroditePro animate-decorFloatReverse1s text-[30px]! md:text-4xl! my-6 text-gray-700'
               />
             </div>
             <div
@@ -204,7 +207,7 @@ const WeddingDay = () => {
               <Title label={side.intimate.location} className='text-primary' />
               <Description label={side.intimate.address} className='text-dark' />
             </div>
-            <div ref={refBottom} className='flex-center flex-col mt-4 space-y-1 '>
+            <div ref={refBottom} className='flex-center flex-col mt-4 space-y-2 '>
               <img
                 src='/assets/logo.png'
                 alt=''
@@ -233,7 +236,12 @@ const WeddingDay = () => {
                 <Title label={side.wedding.location} className='text-primary' />
                 <Description label={side.wedding.address} />
               </div>
-              <p className='animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-none leading-10 text-base mt-6 italic font-UVFAphroditePro'>
+              <p
+                className='animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-9 
+              leading-7
+              text-[3.7vw]
+               md:text-[1.08vw]
+               mt-6 italic font-UVFAphroditePro'>
                 {common.closing}
               </p>
             </div>
