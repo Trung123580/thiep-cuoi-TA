@@ -10,6 +10,7 @@
   --font-SVNAstronout: 'SVN-Astronout', sans-serif;
   --text-shadow-md: 0 10px 10px #000;
   --text-shadow-sm: 0 2px 5px #000;
+  --shadow-medium: 0 5px 10px 1px #000;
 
   --animate-title: title-animation 0.8s ease forwards;
   --animate-TranslateY: TranslateYAnimation 1s ease infinite;
@@ -231,7 +232,7 @@
     transform: translateX(80px);
   }
 }
-@keyframes snowflakes-fall {
+/* @keyframes snowflakes-fall {
   0% {
     top: -10%;
   }
@@ -247,6 +248,31 @@
   50% {
     transform: translateX(80px);
   }
+} */
+
+@utility animation-delay-0 {
+  animation-delay: 0s;
+}
+@utility animation-delay-250 {
+  animation-delay: 0.25s;
+}
+@utility animation-delay-500 {
+  animation-delay: 0.5s;
+}
+@utility animation-delay-1000 {
+  animation-delay: 1s;
+}
+@utility animation-delay-1500 {
+  animation-delay: 1.5s;
+}
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}
+@utility animation-delay-3000 {
+  animation-delay: 3s;
+}
+@utility animation-delay-5000 {
+  animation-delay: 5s;
 }
 .snowflake {
   color: #fff;
