@@ -2,7 +2,8 @@ import SplitTextUI from './ui/SplitTextUI'
 import { useInView } from 'react-intersection-observer'
 import Title from './ui/Title'
 import Description from './ui/Desctiption'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import useInViewport from './hooks/useScrollViewElement'
 
 const data = {
   title: 'Wedding Day',
@@ -60,20 +61,40 @@ const WeddingDay = () => {
   const { ref, inView } = useInView({
     threshold: 0,
   })
-  const { ref: refTitle, inView: inViewTitle } = useInView({
-    threshold: 0,
-  })
 
   const { ref: refWeddingDay, inView: inViewWeddingDay } = useInView({
     threshold: 0,
+  })
+  const refTitle = useRef<HTMLDivElement | null>(null)
+  const refBottom = useRef<HTMLDivElement | null>(null)
+  const refMiddle = useRef<HTMLDivElement | null>(null)
+  const refTop = useRef<HTMLDivElement | null>(null)
+  const inViewTitle = useInViewport(refTitle, {
+    threshold: 0.2,
+    rootMargin: '0px 0px 0px 0px',
+    freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
+  })
+  const inViewBottom = useInViewport(refBottom, {
+    threshold: 0.4,
+    rootMargin: '0px 0px 0px 0px',
+    freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
+  })
+
+  const inViewTop = useInViewport(refTop, {
+    threshold: 0.2,
+    rootMargin: '0px 0px 0px 0px',
+    freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
+  })
+  const inViewMiddle = useInViewport(refMiddle, {
+    threshold: 0.2,
+    rootMargin: '0px 0px 0px 0px',
+    freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
   })
 
   const [activeSide, setActiveSide] = useState<'groom' | 'bride'>('groom')
 
   const side = data.invitation[activeSide]
   const common = data.invitation.common
-
-  useEffect(() => {}, [])
 
   return (
     <section ref={ref} className='mt-30  section-2 text-center' data-class='left'>
@@ -92,31 +113,44 @@ const WeddingDay = () => {
         mình nhé!
       </SplitTextUI>
 
-      <div className='mx-auto max-w-[1000px] flex-center flex-col'>
-        <div className='mt-16 flex gap-1 relative left-[0.3vw]' ref={refTitle}>
-          <button
-            onClick={() => setActiveSide('groom')}
+      <div className='mt-10 mx-auto max-w-[1000px] flex-center flex-col md:px-0 px-2'>
+        <div className='flex gap-1 relative left-[0.3vw] ' ref={refTitle}>
+          <div
             className={`${
-              inViewTitle ? 'animate-fadeInLeft' : ''
-            } px-10 py-4 pt-6 border rounded-full transition-all rounded-r-none text-2xl border-black font-UVFAphroditePro ${
-              activeSide === 'groom' ? 'bg-red text-white' : 'bg-white text-black'
+              activeSide === 'groom' ? 'animate-decorFloatReverse2.5' : 'opacity-50'
             }`}>
-            Nhà Trai
-          </button>
-          <button
-            onClick={() => setActiveSide('bride')}
+            <button
+              onClick={() => setActiveSide('groom')}
+              className={`${
+                inViewTitle ? 'animate-fadeInLeft' : ''
+              } px-10 py-4 pt-6 border rounded-full transition-all rounded-r-none text-2xl border-black font-UVFAphroditePro ${
+                activeSide === 'groom' ? 'bg-red text-white' : 'bg-white text-black'
+              }`}>
+              Nhà Trai
+            </button>
+          </div>
+          <div
             className={`${
-              inViewTitle ? 'animate-fadeInRight' : ''
-            } px-10 py-4 pt-6 border rounded-full transition-all rounded-l-none text-2xl border-black font-UVFAphroditePro ${
-              activeSide === 'bride' ? 'bg-red text-white' : 'bg-white text-black'
+              activeSide === 'bride' ? 'animate-decorFloatReverse2.5' : 'opacity-50'
             }`}>
-            Nhà Gái
-          </button>
+            <button
+              onClick={() => setActiveSide('bride')}
+              className={`${
+                inViewTitle ? 'animate-fadeInRight' : ''
+              } px-10 py-4 pt-6 border rounded-full transition-all rounded-l-none text-2xl border-black font-UVFAphroditePro ${
+                activeSide === 'bride' ? 'bg-red text-white' : 'bg-white text-black'
+              }`}>
+              Nhà Gái
+            </button>
+          </div>
         </div>
         <div
-          className='flex shadow-medium/60 mt-10 w-full h-screen text-dark rounded-lg overflow-hidden'
+          className='flex md:flex-row flex-col  shadow-medium/60 mt-10 w-full text-dark rounded-lg overflow-hidden'
           ref={refWeddingDay}>
-          <div className={`flex-1 ${inViewWeddingDay ? 'animate-fadeInLeft' : ''}`}>
+          <div
+            className={` h-screen flex-1 ${
+              inViewWeddingDay ? 'animate-fadeInLeft' : ''
+            }`}>
             <img
               src={
                 activeSide === 'groom'
@@ -128,55 +162,88 @@ const WeddingDay = () => {
             />
           </div>
           <div
-            className={`flex-1 flex-center flex-col h-full space-y-2 ${
+            ref={refTop}
+            className={`h-max py-10 md:py-0 flex-1 flex-center flex-col  space-y-1 ${
               inViewWeddingDay ? 'animate-fadeInRight' : ''
             }`}>
-            <div className='animate-fadeInUp opacity-0'>
+            <div
+              className={`${
+                inViewTop ? 'animate-fadeInUpShow' : ''
+              } animation-delay-0 opacity-0`}>
               <Title label={common.greeting} className='uppercase font-normal' />
               <Description label={common.guest} className='!text-xl text-red' />
             </div>
-            <div className='animate-fadeInRight animate-delay-500 opacity-0'>
+            <div
+              className={`${
+                inViewTop ? 'animate-fadeInUpShow' : ''
+              } animate-delay-500 opacity-0`}>
               <Description label={common.inviteLine1} />
               <Description label={common.inviteLine2} />
             </div>
-            <div className='animate-fadeInUp animation-delay-500 opacity-0'>
+            <div
+              className={`${
+                inViewTop ? 'animate-fadeInUp' : ''
+              } animation-delay-500 opacity-0`}>
               <Title
                 label={common.couple}
                 className='font-UVFAphroditePro animate-decorFloatReverse1s !text-4xl my-6 text-gray-700'
               />
             </div>
-            <div className='animate-fadeInRight animation-delay-500 opacity-0'>
+            <div
+              className={`${
+                inViewMiddle ? 'animate-fadeInRight' : ''
+              } animation-delay-1000 opacity-0`}
+              ref={refMiddle}>
               <Title label={side.intimate.title} className='text-red' />
               <Description label={side.intimate.time} />
             </div>
-            <div className='animate-fadeInUpShow animation-delay-500 opacity-0'>
+            <div
+              className={`${
+                inViewMiddle ? 'animate-fadeInUpShow' : ''
+              } animation-delay-1000 opacity-0`}>
               <Title label={side.intimate.date} className='text-red' />
               <Description label={side.intimate.lunarDate} />
             </div>
-            <div className='animate-fadeInLeft animation-delay-500 opacity-0'>
+            <div
+              className={`${
+                inViewMiddle ? 'animate-fadeInLeft' : ''
+              } animation-delay-1000 opacity-0`}>
               <Title label={side.intimate.location} className='text-red' />
               <Description label={side.intimate.address} className='text-dark' />
             </div>
-            <img
-              src='/assets/logo.png'
-              alt=''
-              className='object-contain opacity-0 animate-fadeInUpShow animation-delay-250 w-[100px]'
-            />
-            <div className='animate-fadeInDown animation-delay-500 opacity-0'>
-              <Title label={side.wedding.title} className='text-red' />
-              <Description label={side.wedding.time} />
+            <div ref={refBottom} className='flex-center flex-col mt-4 space-y-1 '>
+              <img
+                src='/assets/logo.png'
+                alt=''
+                className={`object-contain opacity-0 ${
+                  inViewBottom ? 'animate-fadeInUpShow' : ''
+                } animation-delay-0 w-[100px]`}
+              />
+              <div
+                className={`${
+                  inViewBottom ? 'animate-fadeInUpShow' : ''
+                } animation-delay-250 opacity-0`}>
+                <Title label={side.wedding.title} className='text-red' />
+                <Description label={side.wedding.time} />
+              </div>
+              <div
+                className={`${
+                  inViewBottom ? 'animate-fadeInUpShow' : ''
+                } animation-delay-500 opacity-0`}>
+                <Title label={side.wedding.date} className='text-red' />
+                <Description label={side.wedding.lunarDate} className='italic' />
+              </div>
+              <div
+                className={`${
+                  inViewBottom ? 'animate-fadeInUpShow' : ''
+                } animation-delay-1000 opacity-0`}>
+                <Title label={side.wedding.location} className='text-red' />
+                <Description label={side.wedding.address} />
+              </div>
+              <p className='animate-fadeInUpShow opacity-0 animation-delay-2000 text-base mt-4 italic font-UVFAphroditePro'>
+                {common.closing}
+              </p>
             </div>
-            <div className='animate-fadeInLeft animation-delay-500 opacity-0'>
-              <Title label={side.wedding.date} className='text-red' />
-              <Description label={side.wedding.lunarDate} className='italic' />
-            </div>
-            <div className='animate-fadeInRight animation-delay-500 opacity-0'>
-              <Title label={side.wedding.location} className='text-red' />
-              <Description label={side.wedding.address} />
-            </div>
-            <p className='animate-fadeInUpShow opacity-0 animation-delay-1500 text-base mt-8 italic font-UVFAphroditePro'>
-              {common.closing}
-            </p>
           </div>
         </div>
       </div>

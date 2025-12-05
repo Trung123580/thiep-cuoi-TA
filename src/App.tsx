@@ -3,7 +3,7 @@ import { ScrollTrigger, ScrollSmoother } from 'gsap/all'
 import { useGSAP } from '@gsap/react'
 import SplitTextUI from './components/ui/SplitTextUI'
 import Banner from './components/Banner'
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { useAppDispatch, useAppSelector, useAppStore } from './components/hooks/useStore'
 import WeddingDay from './components/WeddingDay'
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP)
@@ -15,14 +15,22 @@ function App() {
   console.log({ isOpen })
 
   useEffect(() => {
-    ScrollSmoother.create({
-      content: '#smooth-content',
+    const smoother = ScrollSmoother.create({
       wrapper: '#smooth-wrapper',
-      smooth: 1.5,
+      content: '#smooth-content',
+      smooth: 1.8,
       effects: true,
+      smoothTouch: 0.1,
+      normalizeScroll: true,
+      ignoreMobileResize: true,
     })
-  }, [ScrollSmoother])
+    smoother.scrollTop(0)
 
+    return () => {
+      smoother.kill()
+      ScrollTrigger.refresh()
+    }
+  }, [ScrollSmoother])
   // useGSAP(
   //   () => {
   //     const boxes = gsap.utils.toArray('.box')
