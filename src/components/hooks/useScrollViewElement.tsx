@@ -26,14 +26,12 @@ function useInViewport(
     const observer = new IntersectionObserver(
       ([entry]) => {
         const visible = entry.isIntersecting
-        console.log({ visible })
 
         if (visible) {
           hasBeenVisible.current = true
         } else {
           hasBeenVisible.current = false
         }
-
         // Logic xử lý theo các option
         if (freezeOnceVisible) {
           setIsInViewport(hasBeenVisible.current)

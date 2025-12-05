@@ -3,15 +3,16 @@
 
 @theme {
   --color-dark: #1a202c;
-  --color-red: #a50207;
-  --color-primary: #007bff;
+  --color-primary: #a50207;
   --font-UTMBryantLG: 'UTM BryantLG', sans-serif;
   --font-UVFAphroditePro: 'UVF Aphrodite Pro', sans-serif;
   --font-SVNAstronout: 'SVN-Astronout', sans-serif;
   --text-shadow-md: 0 10px 10px #000;
   --text-shadow-sm: 0 2px 5px #000;
   --shadow-medium: 0 5px 10px 1px #000;
+  --shadow-red: 0 0px 10px 1px var(--color-primary);
 
+  --animate-rotate: rotate 4s linear infinite;
   --animate-title: title-animation 0.8s ease forwards;
   --animate-TranslateY: TranslateYAnimation 1s ease infinite;
   --animate-logoPulse: logoPulse 1s infinite alternate;
@@ -29,6 +30,15 @@
   --animate-fadeInLeft: fadeInLeft 1s ease 0s 1 normal forwards;
   --animate-fadeInUpShow: fadeInUpShow 1s ease 0s 1 normal forwards;
   --animate-fadeInRight: fadeInRight 1s ease 0s 1 normal forwards;
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
   @keyframes fadeInUp {
     /* lên xuống */
     0% {

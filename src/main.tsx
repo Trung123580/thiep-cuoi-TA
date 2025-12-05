@@ -3,13 +3,13 @@ import SnowFall from './components/SnowFall'
 import ProviderRedux from './components/ProviderRedux'
 import App from './App'
 import './tailwind.css'
+import DragConstraints from './components/ui/DragConstraints'
 
 createRoot(document.getElementById('root')!).render(
   <ProviderRedux>
-    {/* <div className='fixed top-0 h-screen w-screen z-10'>
-      <DragConstraints />
-    </div> */}
+    <DragConstraints />
     <App />
     <SnowFall />
+    <div className='fixed right-0 bottom-0'>asasdasdasdasdasdd</div>
   </ProviderRedux>
 )

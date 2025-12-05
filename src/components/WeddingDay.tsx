@@ -67,28 +67,22 @@ const WeddingDay = () => {
   })
   const refTitle = useRef<HTMLDivElement | null>(null)
   const refBottom = useRef<HTMLDivElement | null>(null)
-  const refMiddle = useRef<HTMLDivElement | null>(null)
   const refTop = useRef<HTMLDivElement | null>(null)
   const inViewTitle = useInViewport(refTitle, {
-    threshold: 0.2,
-    rootMargin: '0px 0px 0px 0px',
-    freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
+    threshold: 0.3,
+    // rootMargin: '0px 0px 0px 0px',
+    // freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
   })
   const inViewBottom = useInViewport(refBottom, {
-    threshold: 0.4,
-    rootMargin: '0px 0px 0px 0px',
-    freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
+    threshold: 0.3,
+    // rootMargin: '0px 0px 0px 0px',
+    // freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
   })
 
   const inViewTop = useInViewport(refTop, {
-    threshold: 0.2,
-    rootMargin: '0px 0px 0px 0px',
-    freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
-  })
-  const inViewMiddle = useInViewport(refMiddle, {
-    threshold: 0.2,
-    rootMargin: '0px 0px 0px 0px',
-    freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
+    threshold: 0.3,
+    // rootMargin: '0px 0px 0px 0px',
+    // freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
   })
 
   const [activeSide, setActiveSide] = useState<'groom' | 'bride'>('groom')
@@ -97,23 +91,23 @@ const WeddingDay = () => {
   const common = data.invitation.common
 
   return (
-    <section ref={ref} className='mt-30  section-2 text-center' data-class='left'>
+    <section ref={ref} className='mt-20 md:mt-30 section-2 text-center' data-class='left'>
       <SplitTextUI
         isRun={inView}
         classGsap='title'
-        className='text-7xl font-semibold text-black font-UVFAphroditePro'>
+        className='text-[40px] leading-0 md:text-7xl font-semibold text-black font-UVFAphroditePro'>
         Wedding Day
       </SplitTextUI>
       <SplitTextUI
         isRun={inView}
         classGsap='description'
         duration={0.5}
-        className='text-xl italic text-black font-UTMBryantLG mt-20 text-nowrap'>
+        className='text-xl italic text-black font-UTMBryantLG mt-16 md:mt-20 md:text-nowrap'>
         Click vào sự kiện Nhà Gái - Nhà Trai để xem chi tiết lịch trình đám cưới của chúng
         mình nhé!
       </SplitTextUI>
 
-      <div className='mt-10 mx-auto max-w-[1000px] flex-center flex-col md:px-0 px-2'>
+      <div className='mt-6 md:mt-10 mx-auto max-w-[1000px] flex-center flex-col md:px-0 px-2'>
         <div className='flex gap-1 relative left-[0.3vw] ' ref={refTitle}>
           <div
             className={`${
@@ -123,8 +117,8 @@ const WeddingDay = () => {
               onClick={() => setActiveSide('groom')}
               className={`${
                 inViewTitle ? 'animate-fadeInLeft' : ''
-              } px-10 py-4 pt-6 border rounded-full transition-all rounded-r-none text-2xl border-black font-UVFAphroditePro ${
-                activeSide === 'groom' ? 'bg-red text-white' : 'bg-white text-black'
+              } px-10 py-2 pt-4 md:py-4 md:pt-6 border rounded-full transition-all rounded-r-none text-base md:text-2xl border-black font-UVFAphroditePro ${
+                activeSide === 'groom' ? 'bg-primary text-white' : 'bg-white text-black'
               }`}>
               Nhà Trai
             </button>
@@ -137,15 +131,15 @@ const WeddingDay = () => {
               onClick={() => setActiveSide('bride')}
               className={`${
                 inViewTitle ? 'animate-fadeInRight' : ''
-              } px-10 py-4 pt-6 border rounded-full transition-all rounded-l-none text-2xl border-black font-UVFAphroditePro ${
-                activeSide === 'bride' ? 'bg-red text-white' : 'bg-white text-black'
+              } px-10 py-2 pt-4 md:py-4 md:pt-6 border rounded-full transition-all rounded-l-none text-base md:text-2xl border-black font-UVFAphroditePro ${
+                activeSide === 'bride' ? 'bg-primary text-white' : 'bg-white text-black'
               }`}>
               Nhà Gái
             </button>
           </div>
         </div>
         <div
-          className='flex md:flex-row flex-col  shadow-medium/60 mt-10 w-full text-dark rounded-lg overflow-hidden'
+          className='flex md:flex-row flex-col item-center justify-center shadow-medium/60 mt-10 w-full text-dark rounded-lg overflow-hidden'
           ref={refWeddingDay}>
           <div
             className={` h-screen flex-1 ${
@@ -163,7 +157,7 @@ const WeddingDay = () => {
           </div>
           <div
             ref={refTop}
-            className={`h-max py-10 md:py-0 flex-1 flex-center flex-col  space-y-1 ${
+            className={`flex-1 my-auto flex-center flex-col space-y-1 ${
               inViewWeddingDay ? 'animate-fadeInRight' : ''
             }`}>
             <div
@@ -171,7 +165,7 @@ const WeddingDay = () => {
                 inViewTop ? 'animate-fadeInUpShow' : ''
               } animation-delay-0 opacity-0`}>
               <Title label={common.greeting} className='uppercase font-normal' />
-              <Description label={common.guest} className='!text-xl text-red' />
+              <Description label={common.guest} className='!text-xl text-primary' />
             </div>
             <div
               className={`${
@@ -191,24 +185,23 @@ const WeddingDay = () => {
             </div>
             <div
               className={`${
-                inViewMiddle ? 'animate-fadeInRight' : ''
-              } animation-delay-1000 opacity-0`}
-              ref={refMiddle}>
-              <Title label={side.intimate.title} className='text-red' />
+                inViewTop ? 'animate-fadeInRight' : ''
+              } animation-delay-1000 opacity-0`}>
+              <Title label={side.intimate.title} className='text-primary' />
               <Description label={side.intimate.time} />
             </div>
             <div
               className={`${
-                inViewMiddle ? 'animate-fadeInUpShow' : ''
+                inViewTop ? 'animate-fadeInUpShow' : ''
               } animation-delay-1000 opacity-0`}>
-              <Title label={side.intimate.date} className='text-red' />
+              <Title label={side.intimate.date} className='text-primary' />
               <Description label={side.intimate.lunarDate} />
             </div>
             <div
               className={`${
-                inViewMiddle ? 'animate-fadeInLeft' : ''
+                inViewTop ? 'animate-fadeInLeft' : ''
               } animation-delay-1000 opacity-0`}>
-              <Title label={side.intimate.location} className='text-red' />
+              <Title label={side.intimate.location} className='text-primary' />
               <Description label={side.intimate.address} className='text-dark' />
             </div>
             <div ref={refBottom} className='flex-center flex-col mt-4 space-y-1 '>
@@ -217,30 +210,30 @@ const WeddingDay = () => {
                 alt=''
                 className={`object-contain opacity-0 ${
                   inViewBottom ? 'animate-fadeInUpShow' : ''
-                } animation-delay-0 w-[100px]`}
+                } animation-delay-0 w-[100px] mb-2`}
               />
               <div
                 className={`${
                   inViewBottom ? 'animate-fadeInUpShow' : ''
                 } animation-delay-250 opacity-0`}>
-                <Title label={side.wedding.title} className='text-red' />
+                <Title label={side.wedding.title} className='text-primary' />
                 <Description label={side.wedding.time} />
               </div>
               <div
                 className={`${
                   inViewBottom ? 'animate-fadeInUpShow' : ''
                 } animation-delay-500 opacity-0`}>
-                <Title label={side.wedding.date} className='text-red' />
+                <Title label={side.wedding.date} className='text-primary' />
                 <Description label={side.wedding.lunarDate} className='italic' />
               </div>
               <div
                 className={`${
                   inViewBottom ? 'animate-fadeInUpShow' : ''
                 } animation-delay-1000 opacity-0`}>
-                <Title label={side.wedding.location} className='text-red' />
+                <Title label={side.wedding.location} className='text-primary' />
                 <Description label={side.wedding.address} />
               </div>
-              <p className='animate-fadeInUpShow opacity-0 animation-delay-2000 text-base mt-4 italic font-UVFAphroditePro'>
+              <p className='animate-fadeInUpShow opacity-0 animation-delay-2000 text-base mt-6 italic font-UVFAphroditePro'>
                 {common.closing}
               </p>
             </div>
