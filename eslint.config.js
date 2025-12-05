@@ -27,6 +27,7 @@ export default defineConfig([
       '@typescript-eslint/no-non-null-assertion': 'off',
       'react-refresh/only-export-components': 'off',
       'react-hooks/exhaustive-deps': 'off',
+      'react-hooks/refs': 'off'
     },
   },
 ])

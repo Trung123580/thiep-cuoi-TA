@@ -55,7 +55,7 @@ function useInViewport(
         observer.disconnect()
       })
     }
-  }, [ref, threshold, rootMargin, triggerOnce, freezeOnceVisible])
+  }, [ref, threshold, rootMargin, triggerOnce, freezeOnceVisible, ref.current])
 
   return isInViewport
 }

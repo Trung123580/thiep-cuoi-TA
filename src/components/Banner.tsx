@@ -11,7 +11,7 @@ const Banner = () => {
   console.log({ inViewMiddle })
 
   return (
-    <section className='relative h-[650px] md:h-auto' ref={refMiddle} data-class='top'>
+    <section className='relative h-[650px] md:h-auto' ref={refMiddle}>
       <div className='ab-center w-full h-full bg-black/20'></div>
       <div className='w-full h-full'>
         <img src='/assets/banner.png' alt='' className='object-cover h-full' />

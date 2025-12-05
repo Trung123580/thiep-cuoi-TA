@@ -10,6 +10,5 @@ createRoot(document.getElementById('root')!).render(
     <DragConstraints />
     <App />
     <SnowFall />
-    <div className='fixed right-0 bottom-0'>asasdasdasdasdasdd</div>
   </ProviderRedux>
 )
