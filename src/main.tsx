@@ -1,6 +1,5 @@
 import { createRoot } from 'react-dom/client'
 import SnowFall from './components/SnowFall'
-import DragConstraints from './components/ui/DragConstraints'
 import ProviderRedux from './components/ProviderRedux'
 import App from './App'
 import './tailwind.css'

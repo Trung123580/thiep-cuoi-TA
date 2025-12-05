@@ -2,7 +2,7 @@ import SplitTextUI from './ui/SplitTextUI'
 import { useInView } from 'react-intersection-observer'
 import Title from './ui/Title'
 import Description from './ui/Desctiption'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import useInViewport from './hooks/useScrollViewElement'
 
 const data = {

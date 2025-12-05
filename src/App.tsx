@@ -3,15 +3,14 @@ import { ScrollTrigger, ScrollSmoother } from 'gsap/all'
 import { useGSAP } from '@gsap/react'
 import SplitTextUI from './components/ui/SplitTextUI'
 import Banner from './components/Banner'
-import { useEffect, useLayoutEffect } from 'react'
-import { useAppDispatch, useAppSelector, useAppStore } from './components/hooks/useStore'
+import { useEffect } from 'react'
+import { useAppSelector } from './components/hooks/useStore'
 import WeddingDay from './components/WeddingDay'
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP)
 function App() {
   const {
     storeAction: { isOpen },
   } = useAppSelector((state) => state)
-  const dispatch = useAppDispatch()
   console.log({ isOpen })
 
   useEffect(() => {
@@ -66,8 +65,7 @@ function App() {
   // })
 
   const handleScroll = (e: Event) => {
-    // console.log(e.);
-    console.log(window.innerHeight)
+    console.log(e)
   }
 
   useEffect(() => {
