@@ -49,10 +49,13 @@ function useInViewport(
       }
     )
 
-    observer.observe(element)
-
+    window.addEventListener('load', () => {
+      observer.observe(element)
+    })
     return () => {
-      observer.disconnect()
+      window.removeEventListener('load', () => {
+        observer.disconnect()
+      })
     }
   }, [ref, threshold, rootMargin, triggerOnce, freezeOnceVisible])
 

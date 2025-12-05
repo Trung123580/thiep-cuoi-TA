@@ -1,21 +1,22 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import SplitTextUI from './ui/SplitTextUI'
 import useInViewport from './hooks/useScrollViewElement'
 
 const Banner = () => {
   const refMiddle = useRef<HTMLDivElement | null>(null)
   const inViewMiddle = useInViewport(refMiddle, {
-    threshold: 0.2,
+    threshold: 0,
     rootMargin: '0px 0px 0px 0px',
-    freezeOnceVisible: true, // cho phép chạy lại khi scroll lên/xuống
   })
+  console.log({ inViewMiddle })
+
   return (
-    <section className='relative h-[650px] md:h-auto' data-class='top'>
+    <section className='relative h-[650px] md:h-auto' ref={refMiddle} data-class='top'>
       <div className='ab-center w-full h-full bg-black/20'></div>
       <div className='w-full h-full'>
         <img src='/assets/banner.png' alt='' className='object-cover h-full' />
       </div>
-      <div className='ab-center text-center top-[65%]' ref={refMiddle}>
+      <div className='ab-center text-center top-[65%]'>
         {inViewMiddle && (
           <>
             <SplitTextUI

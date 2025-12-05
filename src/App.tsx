@@ -6,6 +6,7 @@ import Banner from './components/Banner'
 import { useEffect } from 'react'
 import { useAppSelector } from './components/hooks/useStore'
 import WeddingDay from './components/WeddingDay'
+import { idv4 } from './utils/helpers'
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP)
 function App() {
   const {
@@ -14,6 +15,7 @@ function App() {
   console.log({ isOpen })
 
   useEffect(() => {
+    if (window.innerWidth < 768) return
     const smoother = ScrollSmoother.create({
       wrapper: '#smooth-wrapper',
       content: '#smooth-content',
@@ -64,53 +66,53 @@ function App() {
   //   })
   // })
 
-  const handleScroll = (e: Event) => {
-    console.log(e)
-  }
+  // const handleScroll = (e: Event) => {
+  //   console.log(e)
+  // }
 
-  useEffect(() => {
-    const sections = document.querySelectorAll('.section')
+  // useEffect(() => {
+  //   const sections = document.querySelectorAll('.section')
 
-    // if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+  //   // if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
 
-    // }
-    console.log(sections)
-    // sections.forEach((element) => {
-    //   console.log(element.className)
+  //   // }
+  //   console.log(sections)
+  //   // sections.forEach((element) => {
+  //   //   console.log(element.className)
 
-    //   const domElement = element.getBoundingClientRect()
-    //   console.log({ domElement })
-    // })
+  //   //   const domElement = element.getBoundingClientRect()
+  //   //   console.log({ domElement })
+  //   // })
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-    // const observer = new IntersectionObserver(
-    //   (entries) => {
-    //     // entries.forEach((entry) => {
-    //     //   if (entry.isIntersecting) {
-    //     //     entry.target.classList.add('show')
-    //     //   } else {
-    //     //     entry.target.classList.remove('show')
-    //     //   }
-    //     // })
-    //     if (entries[0].isIntersecting) {
-    //       // if (entries[0].target.classList.contains('show')) {
-    //       //   entries[0].target.classList.remove('show')
-    //       //   return
-    //       // }
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  //   // const observer = new IntersectionObserver(
+  //   //   (entries) => {
+  //   //     // entries.forEach((entry) => {
+  //   //     //   if (entry.isIntersecting) {
+  //   //     //     entry.target.classList.add('show')
+  //   //     //   } else {
+  //   //     //     entry.target.classList.remove('show')
+  //   //     //   }
+  //   //     // })
+  //   //     if (entries[0].isIntersecting) {
+  //   //       // if (entries[0].target.classList.contains('show')) {
+  //   //       //   entries[0].target.classList.remove('show')
+  //   //       //   return
+  //   //       // }
 
-    //       entries[0].target.classList.add('show')
-    //     } else {
-    //       entries[0].target.classList.remove('show')
-    //     }
-    //   },
-    //   {
-    //     threshold: 0.5,
-    //     rootMargin: '0px 0px 0px 0px',
-    //   }
-    // )
-    // sections.forEach((section) => observer.observe(section))
-  }, [])
+  //   //       entries[0].target.classList.add('show')
+  //   //     } else {
+  //   //       entries[0].target.classList.remove('show')
+  //   //     }
+  //   //   },
+  //   //   {
+  //   //     threshold: 0.5,
+  //   //     rootMargin: '0px 0px 0px 0px',
+  //   //   }
+  //   // )
+  //   // sections.forEach((section) => observer.observe(section))
+  // }, [])
 
   useEffect(() => {
     const sections = document.querySelectorAll('.section')
