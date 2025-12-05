@@ -157,7 +157,7 @@ const WeddingDay = () => {
           </div>
           <div
             ref={refTop}
-            className={`flex-1 my-auto flex-center flex-col space-y-1 ${
+            className={`flex-1 py-8 md:py-0 my-auto flex-center flex-col space-y-1 ${
               inViewWeddingDay ? 'animate-fadeInRight' : ''
             }`}>
             <div
@@ -233,7 +233,7 @@ const WeddingDay = () => {
                 <Title label={side.wedding.location} className='text-primary' />
                 <Description label={side.wedding.address} />
               </div>
-              <p className='animate-fadeInUpShow opacity-0 animation-delay-2000 text-base mt-6 italic font-UVFAphroditePro'>
+              <p className='animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-none leading-10 text-base mt-6 italic font-UVFAphroditePro'>
                 {common.closing}
               </p>
             </div>
