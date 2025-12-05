@@ -6,7 +6,6 @@ import Banner from './components/Banner'
 import { useEffect } from 'react'
 import { useAppSelector } from './components/hooks/useStore'
 import WeddingDay from './components/WeddingDay'
-import { idv4 } from './utils/helpers'
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP)
 function App() {
   const {
