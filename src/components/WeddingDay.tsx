@@ -101,8 +101,8 @@ const WeddingDay = () => {
       <SplitTextUI
         isRun={inView}
         classGsap='description'
-        duration={0.5}
-        className='text-xl italic text-black font-UTMBryantLG mt-16 md:mt-20 md:text-nowrap'>
+        duration={0.3}
+        className='text-xl italic text-black font-UTMBryantLG mt-16 md:mt-24 md:text-nowrap'>
         Click vào sự kiện Nhà Gái - Nhà Trai để xem chi tiết lịch trình đám cưới của chúng
         mình nhé!
       </SplitTextUI>
@@ -142,7 +142,7 @@ const WeddingDay = () => {
           className='flex md:flex-row flex-col item-center justify-center shadow-medium/60 mt-10 w-full text-dark rounded-lg overflow-hidden'
           ref={refWeddingDay}>
           <div
-            className={` h-screen flex-1 ${
+            className={`h-[850px] flex-1 ${
               inViewWeddingDay ? 'animate-fadeInLeft' : ''
             }`}>
             <img
@@ -152,12 +152,12 @@ const WeddingDay = () => {
                   : './assets/wedding-gai.png'
               }
               alt=''
-              className='h-full w-full object-cover'
+              className='h-auto w-full object-cover'
             />
           </div>
           <div
             ref={refTop}
-            className={`flex-1 py-8 md:px-0 px-1 md:py-0 my-auto flex-center flex-col space-y-2 ${
+            className={`flex-1 py-8 md:px-0 px-1 my-auto flex-center flex-col space-y-2 ${
               inViewWeddingDay ? 'animate-fadeInRight' : ''
             }`}>
             <div
@@ -237,9 +237,7 @@ const WeddingDay = () => {
                 <Description label={side.wedding.address} />
               </div>
               <p
-                className='animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-9 
-              leading-7
-              text-[3.7vw]
+                className='animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-9 leading-7 text-[3.7vw]
                md:text-[1.08vw]
                mt-6 italic font-UVFAphroditePro'>
                 {common.closing}
