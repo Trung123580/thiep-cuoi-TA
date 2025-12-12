@@ -37,7 +37,7 @@ export default function DragConstraints() {
   }, [])
 
   return (
-    <div className='fixed top-2 h-full w-[20vw] z-10'>
+    <div className='fixed top-2 h-full w-[20vw] z-30'>
       <audio
         playsInline
         autoPlay={false}
