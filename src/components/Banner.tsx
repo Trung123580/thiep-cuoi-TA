@@ -8,7 +8,6 @@ const Banner = () => {
     threshold: 0,
     rootMargin: '0px 0px 0px 0px',
   })
-  console.log({ inViewMiddle })
 
   return (
     <section className='relative h-[80vh] md:h-auto' ref={refMiddle}>

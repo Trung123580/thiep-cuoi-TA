@@ -13,6 +13,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  optimizeDeps: {
+    include: ['react-responsive-masonry', 'prop-types'],
+    force: true,
+  },
   plugins: [
     tailwindcss(),
     react({

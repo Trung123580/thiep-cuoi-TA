@@ -140,7 +140,7 @@ const WeddingDay = () => {
           </div>
         </div>
         <div
-          className='flex md:flex-row flex-col item-center justify-center shadow-medium-red mt-10 w-full text-dark rounded-lg overflow-hidden'
+          className='flex md:flex-row flex-col item-center justify-center shadow-medium/30 mt-10 w-full text-dark rounded-lg overflow-hidden'
           ref={refWeddingDay}>
           <div
             className={`h-[850px] flex-1 ${

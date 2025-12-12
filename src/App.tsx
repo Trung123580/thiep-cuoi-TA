@@ -4,6 +4,9 @@ import WeddingTimeLine from './components/WeddingTimeLine'
 import Modal from './components/Modal'
 import { useEffect, useState } from 'react'
 import WeddingAttenDing from './components/WeddingAttenDing'
+import Footer from './components/Footer'
+import WeddingMoments from './components/WeddingMoments'
+import WeddingWishes from './components/WeddingWishes'
 function App() {
   const [isOpenModal, setIsOpenModal] = useState(false)
 
@@ -26,6 +29,9 @@ function App() {
       <WeddingDay />
       <WeddingTimeLine />
       <WeddingAttenDing />
+      <WeddingMoments />
+      <WeddingWishes />
+      <Footer />
       <Modal isOpen={isOpenModal} onToggle={() => setIsOpenModal(!isOpenModal)}>
         <div className='px-5 w-[400px] h-[150px] bg-white rounded-xl flex-center relative'>
           <button

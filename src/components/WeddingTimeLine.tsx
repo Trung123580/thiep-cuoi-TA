@@ -1,6 +1,7 @@
 import SplitTextUI from './ui/SplitTextUI'
 import { useInView } from 'react-intersection-observer'
 import { idv4 } from '../utils/helpers'
+import { useEffect, useState } from 'react'
 interface ITimeLine {
   id: string
   image: string
@@ -9,6 +10,7 @@ interface ITimeLine {
   description: string
   description2: string
   className: string
+  ref?: any
 }
 const dataTimeLine: ITimeLine[] = [
   {
@@ -18,7 +20,7 @@ const dataTimeLine: ITimeLine[] = [
     date: '28/12/2025',
     description: 'Tiệc Thân Mật',
     description2: 'Nhà Trai',
-    className: 'animate-fadeInUpShow animation-delay-250',
+    className: 'animate-fadeInUpShow',
   },
   {
     id: idv4(),
@@ -27,7 +29,7 @@ const dataTimeLine: ITimeLine[] = [
     date: '28/12/2025',
     description: 'Tiệc Thân Mật',
     description2: 'Nhà Trai',
-    className: 'animate-fadeInUpShow animation-delay-500',
+    className: 'animate-fadeInUpShow ',
   },
   {
     id: idv4(),
@@ -36,7 +38,7 @@ const dataTimeLine: ITimeLine[] = [
     date: '29/12/2025',
     description: 'Tiệc Thân Mật',
     description2: 'Nhà Trai',
-    className: 'animate-fadeInUpShow animation-delay-1000',
+    className: 'animate-fadeInUpShow ',
   },
   {
     id: idv4(),
@@ -45,14 +47,36 @@ const dataTimeLine: ITimeLine[] = [
     date: '29/12/2025',
     description: 'Tiệc Thân Mật',
     description2: 'Nhà Trai',
-    className: 'animate-fadeInUpShow animation-delay-1500',
+    className: 'animate-fadeInUpShow ',
   },
 ]
 const WeddingTimeLine = () => {
   const { ref, inView } = useInView({ threshold: 0 })
   const { ref: refOne, inView: inViewOne } = useInView({ threshold: 0 })
-  const { ref: refTwo, inView: inViewTwo } = useInView({ threshold: 0.4 })
+  const { ref: refTwo, inView: inViewTwo } = useInView({ threshold: 0.1 })
   const { ref: refThree, inView: inViewThree } = useInView({ threshold: 0.1 })
+
+  const { ref: ref1, inView: inView1 } = useInView({ threshold: 0.2 })
+  const { ref: ref2, inView: inView2 } = useInView({ threshold: 0.2 })
+  const { ref: ref3, inView: inView3 } = useInView({ threshold: 0.2 })
+  const { ref: ref4, inView: inView4 } = useInView({ threshold: 0.2 })
+
+  const refItem = [ref1, ref2, ref3, ref4]
+  const refInview = [inView1, inView2, inView3, inView4]
+
+  const [dataRender, setDataRender] = useState<ITimeLine[]>([])
+
+  useEffect(() => {
+    if (dataTimeLine.length) {
+      const mapData = dataTimeLine.map((item, index) => {
+        return {
+          ...item,
+          ref: refItem[index],
+        }
+      })
+      setDataRender(mapData)
+    }
+  }, [refItem])
   return (
     <section ref={ref} className='mt-30 md:mt-40  text-center'>
       <SplitTextUI
@@ -99,14 +123,20 @@ const WeddingTimeLine = () => {
             </div>
           </div>
           <div className='h-auto w-full md:w-[55%] relative  mx-auto '>
-            <div className='absolute left-1/2 z-10 -translate-x-1/2 top-0 md:top-1/2 -translate-y-[104%] md:-translate-y-1/2 flex flex-col w-max h-max mx-auto'>
-              {dataTimeLine.map(
-                ({ description, description2, id, image, title, className }, index) => {
+            <div
+              ref={ref}
+              className='absolute left-1/2 z-10 -translate-x-1/2 top-0 md:top-1/2 -translate-y-[104%] md:-translate-y-1/2 flex flex-col w-max h-max mx-auto'>
+              {dataRender.map(
+                (
+                  { description, ref, description2, id, image, title, className },
+                  index
+                ) => {
                   return (
                     <div
                       key={id}
                       className={`flex items-center gap-8 ${
-                        index < 2 && inViewOne ? className : index > 1 ? className : ''
+                        // index < 2 && inViewOne ? className : index > 1 ? className : ''
+                        refInview[index] ? className : ''
                       } opacity-0`}
                       ref={ref}>
                       <div className='flex items-center justify-center'>
@@ -146,15 +176,13 @@ const WeddingTimeLine = () => {
           </div>
           <div
             ref={refThree}
-            className={`flex-1 animation-delay-1000 relative transition-all duration-1000 opacity-0 h-full  ${
+            className={`flex-1 animation-delay-250 relative transition-all duration-1000 opacity-0 h-full  ${
               inViewThree ? 'animate-fadeInRight' : ''
             }`}>
             <div className='absolute h-auto md:h-full pb-20 pt-10 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 flex flex-col w-full md:w-[351px] px-3 md:pr-10 gap-4 '>
               <img
                 src='/assets/date-time.png'
-                className={`flex-1 object-contain opacity-0 animate-delay-1000 ${
-                  inViewThree ? 'animate-fadeInRight' : ''
-                }`}
+                className={`flex-1 object-contain`}
                 alt=''
               />
               <div ref={refTwo} className='h-full w-full'>

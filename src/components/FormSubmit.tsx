@@ -16,7 +16,6 @@ const FormSubmit = () => {
       await updateDoc(userDoc, { data: arrayUnion(payloadData) })
       setStatus('cảm ơn bạn đã phản hồi')
     } catch (error: any) {
-      console.error('Firebase update error:', error)
       setStatus('Có lỗi xảy ra, vui lòng thử lại.')
     }
   }
@@ -29,15 +28,12 @@ const FormSubmit = () => {
     const radio = formData.get('radio')
     const textarea = formData.get('textarea')
 
-    const response = await handleSubmitForm({
+    await handleSubmitForm({
       name,
       sdt,
       radio,
       textarea,
     })
-    console.log(response)
-
-    console.log({ name, sdt, radio, textarea })
     ;(e.target as HTMLFormElement).reset()
   }
   return (
