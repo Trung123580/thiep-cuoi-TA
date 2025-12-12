@@ -21,6 +21,7 @@ const Banner = () => {
           <>
             <SplitTextUI
               isRun={true}
+              duration={2}
               classGsap='title'
               className='text-[35vw] md:text-[300px] font-normal text-nowrap leading-[90px] md:leading-[250px] text-white font-SVNAstronout'>
               Hải lý & Tiến Anh

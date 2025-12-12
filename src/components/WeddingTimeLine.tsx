@@ -1,7 +1,5 @@
-import { useRef } from 'react'
 import SplitTextUI from './ui/SplitTextUI'
 import { useInView } from 'react-intersection-observer'
-import useInViewport from './hooks/useScrollViewElement'
 import { idv4 } from '../utils/helpers'
 interface ITimeLine {
   id: string
@@ -51,44 +49,10 @@ const dataTimeLine: ITimeLine[] = [
   },
 ]
 const WeddingTimeLine = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-  })
-  const refMiddle = useRef<HTMLDivElement | null>(null)
-  const inViewMiddle = useInViewport(refMiddle, {
-    threshold: 0.3,
-  })
-  // const refTitle = useRef<HTMLDivElement | null>(null)
-  // const refBottom = useRef<HTMLDivElement | null>(null)
-  // const refTop = useRef<HTMLDivElement | null>(null)
-  // const inViewTitle = useInViewport(refTitle, {
-  //   threshold: 0.3,
-  // })
-  // const inViewBottom = useInViewport(refBottom, {
-  //   threshold: 0.3,
-  // })
-
-  // const inViewTop = useInViewport(refTop, {
-  //   threshold: 0.3,
-  // })
-
-  const refOne = useRef<HTMLDivElement | null>(null)
-  const refTwo = useRef<HTMLDivElement | null>(null)
-  // const refThree = useRef<HTMLDivElement | null>(null)
-  // const refFour = useRef<HTMLDivElement | null>(null)
-  const inViewOne = useInViewport(refOne, {
-    threshold: 0,
-  })
-  const inViewTwo = useInViewport(refTwo, {
-    threshold: 0,
-  })
-  // const inViewThree = useInViewport(refThree, {
-  //   threshold: 0,
-  // })
-  // const inViewFour = useInViewport(refFour, {
-  //   threshold: 0,
-  // })
-  console.log({ inViewMiddle, inViewOne, inViewTwo })
+  const { ref, inView } = useInView({ threshold: 0 })
+  const { ref: refOne, inView: inViewOne } = useInView({ threshold: 0 })
+  const { ref: refTwo, inView: inViewTwo } = useInView({ threshold: 0.4 })
+  const { ref: refThree, inView: inViewThree } = useInView({ threshold: 0.1 })
   return (
     <section ref={ref} className='mt-30 md:mt-40  text-center'>
       <SplitTextUI
@@ -102,13 +66,13 @@ const WeddingTimeLine = () => {
         <div className='relative md:block hidden'>
           <div
             className={`ab-center w-full h-full bg-black/30 z-10 ${
-              inViewMiddle || inViewOne || inViewTwo
+              inViewOne
                 ? 'animate-fadeInUpShow'
                 : 'opacity-0 transition-all duration-1000'
             }`}></div>
           <div
             className={`w-full h-[920px] ${
-              inViewMiddle || inViewOne || inViewTwo ? 'animate-fadeInUpShow' : ''
+              inViewOne ? 'animate-fadeInUpShow' : ''
             } opacity-0 transition-all duration-1000`}>
             <img src='/assets/banner.png' alt='' className='object-cover h-full w-full' />
           </div>
@@ -119,13 +83,13 @@ const WeddingTimeLine = () => {
           <div className='relative md:hidden block'>
             <div
               className={`ab-center w-full h-full bg-black/30 z-10 ${
-                inViewMiddle || inViewOne || inViewTwo
+                inViewOne || inViewTwo
                   ? 'animate-fadeInUpShow'
                   : 'opacity-0 transition-all duration-1000'
               }`}></div>
             <div
               className={`w-full h-[920px] ${
-                inViewMiddle || inViewOne || inViewTwo ? 'animate-fadeInUpShow' : ''
+                inViewOne || inViewTwo ? 'animate-fadeInUpShow' : ''
               } opacity-0 transition-all duration-1000`}>
               <img
                 src='/assets/banner.png'
@@ -181,14 +145,15 @@ const WeddingTimeLine = () => {
             </div>
           </div>
           <div
-            className={`flex-1  relative transition-all duration-1000 opacity-0 h-full  ${
-              inViewOne || inViewTwo ? 'animate-fadeInRight' : ''
+            ref={refThree}
+            className={`flex-1 animation-delay-1000 relative transition-all duration-1000 opacity-0 h-full  ${
+              inViewThree ? 'animate-fadeInRight' : ''
             }`}>
             <div className='absolute h-auto md:h-full pb-20 pt-10 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 flex flex-col w-full md:w-[351px] px-3 md:pr-10 gap-4 '>
               <img
                 src='/assets/date-time.png'
                 className={`flex-1 object-contain opacity-0 animate-delay-1000 ${
-                  inViewMiddle || inViewOne || inViewTwo ? 'animate-fadeInRight' : ''
+                  inViewThree ? 'animate-fadeInRight' : ''
                 }`}
                 alt=''
               />
@@ -196,11 +161,7 @@ const WeddingTimeLine = () => {
                 <img
                   src='/assets/wedding-trai.png'
                   className={`w-full h-[505px] object-cover opacity-0 animate-delay-2500 rounded-xl shadow-red
-                    ${
-                      inViewMiddle || inViewOne || inViewTwo
-                        ? 'animate-fadeInUpShow '
-                        : ''
-                    }
+                    ${inViewThree ? 'animate-fadeInUpShow ' : ''}
                     `}
                   alt=''
                 />

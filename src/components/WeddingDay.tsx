@@ -102,7 +102,7 @@ const WeddingDay = () => {
       <SplitTextUI
         isRun={inView}
         classGsap='description'
-        duration={0.3}
+        duration={0.4}
         className='text-xl italic text-black font-UTMBryantLG mt-16 md:mt-26 md:text-nowrap'>
         Click vào sự kiện Nhà Gái - Nhà Trai để xem chi tiết lịch trình đám cưới của chúng
         mình nhé!

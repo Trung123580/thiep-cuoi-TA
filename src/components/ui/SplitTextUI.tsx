@@ -1,52 +1,54 @@
+import { useEffect, useRef } from 'react'
+import SplitType from 'split-type'
 import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
-import { SplitText } from 'gsap/SplitText'
-import { useRef } from 'react'
 
-gsap.registerPlugin(SplitText)
 interface Props {
-  classGsap: string
   className?: string
   delayText?: number
   children: React.ReactNode
   duration?: number
   isRun?: boolean
+  classGsap?: string
 }
 
 const SplitTextUI = ({
-  classGsap,
   className,
   delayText = 0,
   children,
   duration = 1.8,
   isRun = true,
 }: Props) => {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
+  const splitRef = useRef<SplitType | null>(null)
 
-  useGSAP(() => {
-    if (!containerRef.current) return
-    if (!isRun) return
-    const target = containerRef.current.querySelector(
-      `.${classGsap.replace('.', '')}`
-    ) as HTMLElement
+  useEffect(() => {
+    if (!textRef.current || !isRun) return
 
-    if (!target) {
-      console.warn(`Không tìm thấy phần tử với class: ${classGsap}`)
-      return
-    }
+    splitRef.current?.revert()
 
-    const split = new SplitText(target, {
-      type: 'chars, words',
-      // charsClass: 'split-char', // tự động thêm class này cho từng ký tự
+    const split = new SplitType(textRef.current, {
+      types: 'chars,words',
+      tagName: 'div',
     })
 
-    split.chars.forEach((char) => {
-      char.classList.add('text-grandient')
+    splitRef.current = split
+
+    split.chars?.forEach((char) => {
+      char.classList.add('inline-block', 'origin-bottom', 'overflow-visible')
     })
 
-    gsap.from(split.chars, {
-      yPercent: 100,
+    split.chars?.forEach((char) => {
+      char.classList.add('text-gradient')
+    })
+
+    gsap.set(split.chars, {
+      yPercent: 110,
       opacity: 0,
+    })
+
+    gsap.to(split.chars, {
+      yPercent: 0,
+      opacity: 1,
       duration: duration,
       ease: 'expo.out',
       stagger: 0.05,
@@ -55,12 +57,13 @@ const SplitTextUI = ({
 
     return () => {
       split.revert()
+      splitRef.current = null
     }
-  }, [classGsap, delayText, duration, isRun])
+  }, [delayText, duration, isRun, children]) // children trong deps để re-split nếu text thay đổi
 
   return (
-    <div ref={containerRef} className={className}>
-      <div className={classGsap}>{children}</div>
+    <div ref={textRef} className={className}>
+      {children}
     </div>
   )
 }

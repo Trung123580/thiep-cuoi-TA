@@ -12,9 +12,7 @@ const WeddingAttenDing = () => {
   // const refTwo = useRef<HTMLDivElement | null>(null)
   // const refThree = useRef<HTMLDivElement | null>(null)
   // const refFour = useRef<HTMLDivElement | null>(null)
-  const { ref: refOne, inView: inViewOne } = useInView({
-    threshold: 0.3,
-  })
+  const { ref: refOne, inView: inViewOne } = useInView({ threshold: 0.1 })
   // const inViewOne = useInViewport(refOne, {
   //   threshold: 0,
   // })
@@ -35,7 +33,7 @@ const WeddingAttenDing = () => {
         <SplitTextUI
           isRun={inView}
           classGsap='description'
-          duration={0.2}
+          duration={0.1}
           className='text-xl italic text-black font-UTMBryantLG mt-16 md:mt-26 md:text-nowrap'>
           Đám cưới sẽ trọn vẹn và ý nghĩa hơn khi có sự hiện diện và chúc phúc của bạn.
           Hãy xác nhận sự có mặt của bạn để
@@ -43,7 +41,7 @@ const WeddingAttenDing = () => {
         <SplitTextUI
           isRun={inView}
           classGsap='description'
-          duration={0.2}
+          duration={0.1}
           className='text-xl italic text-black font-UTMBryantLG  md:text-nowrap'>
           Minh & Thuỷ chuẩn bị đón tiếp bạn chu đáo nhất nha ♥️
         </SplitTextUI>
@@ -52,14 +50,14 @@ const WeddingAttenDing = () => {
           ref={refOne}
           className='flex md:flex-row flex-col max-w-[1000px] mx-auto pt-4 pb-10 gap-5 mt-10 md:mt-20'>
           <div
-            className={`flex-1 flex-center opacity-0 ${
+            className={`flex-1 flex-center opacity-0  animation-delay-250 ${
               inViewOne ? 'animate-fadeInLeft' : ''
             }`}>
             <FormSubmit />
           </div>
           <div
-            className={`flex-1 h-[550px]  ${
-              inViewOne ? 'animate-fadeInUpShow' : ''
+            className={`flex-1 h-[550px] animation-delay-1000 ${
+              inViewOne ? 'animate-fadeInRight' : ''
             } opacity-0`}>
             <img
               src='/assets/wedding-trai.png'
