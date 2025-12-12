@@ -6,6 +6,7 @@ interface UseInViewportOptions {
   rootMargin?: string
   triggerOnce?: boolean
   freezeOnceVisible?: boolean
+  callback?: boolean
 }
 
 function useInViewport(
@@ -15,6 +16,7 @@ function useInViewport(
     rootMargin = '0px',
     triggerOnce = false,
     freezeOnceVisible = false,
+    callback = false,
   }: UseInViewportOptions = {}
 ): boolean {
   const [isInViewport, setIsInViewport] = useState(false)
@@ -51,7 +53,7 @@ function useInViewport(
       observer.unobserve(element)
       observer.disconnect()
     }
-  }, [ref, threshold, rootMargin, triggerOnce, freezeOnceVisible])
+  }, [ref, threshold, rootMargin, triggerOnce, freezeOnceVisible, callback])
   // Không bao giờ được thêm ref.current vào dependency!
 
   return isInViewport

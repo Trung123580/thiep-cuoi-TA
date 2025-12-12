@@ -1,13 +1,9 @@
-// components/SplitTextUI.tsx
-'use client'
-
-import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 import { SplitText } from 'gsap/SplitText'
 import { useRef } from 'react'
 
 gsap.registerPlugin(SplitText)
-
 interface Props {
   classGsap: string
   className?: string

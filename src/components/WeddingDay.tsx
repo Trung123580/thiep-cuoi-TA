@@ -91,23 +91,24 @@ const WeddingDay = () => {
   const common = data.invitation.common
 
   return (
-    <section ref={ref} className='mt-20 md:mt-30 section-2 text-center' data-class='left'>
+    <section ref={ref} className='mt-30 md:mt-40 section-2 text-center' data-class='left'>
       <SplitTextUI
         isRun={inView}
+        duration={1}
         classGsap='title'
-        className='text-[40px] leading-0 md:text-7xl font-semibold text-black font-UVFAphroditePro'>
+        className='text-[40px] leading-0 md:text-7xl text-black font-UVFAphroditePro'>
         Wedding Day
       </SplitTextUI>
       <SplitTextUI
         isRun={inView}
         classGsap='description'
         duration={0.3}
-        className='text-xl italic text-black font-UTMBryantLG mt-16 md:mt-24 md:text-nowrap'>
+        className='text-xl italic text-black font-UTMBryantLG mt-16 md:mt-26 md:text-nowrap'>
         Click vào sự kiện Nhà Gái - Nhà Trai để xem chi tiết lịch trình đám cưới của chúng
         mình nhé!
       </SplitTextUI>
 
-      <div className='mt-6 md:mt-10 mx-auto max-w-[1000px] flex-center flex-col md:px-0 px-2'>
+      <div className='mt-14 md:mt-20 mx-auto max-w-[1000px] flex-center flex-col md:px-0 px-3'>
         <div className='flex gap-1 relative left-[0.3vw] ' ref={refTitle}>
           <div
             className={`${
@@ -139,7 +140,7 @@ const WeddingDay = () => {
           </div>
         </div>
         <div
-          className='flex md:flex-row flex-col item-center justify-center shadow-medium/60 mt-10 w-full text-dark rounded-lg overflow-hidden'
+          className='flex md:flex-row flex-col item-center justify-center shadow-medium-red mt-10 w-full text-dark rounded-lg overflow-hidden'
           ref={refWeddingDay}>
           <div
             className={`h-[850px] flex-1 ${
@@ -157,7 +158,7 @@ const WeddingDay = () => {
           </div>
           <div
             ref={refTop}
-            className={`flex-1 py-8 md:px-0 px-1 my-auto flex-center flex-col space-y-2 ${
+            className={`flex-1 py-8 md:px-0 px-1 my-auto flex-center flex-col space-y-3 ${
               inViewWeddingDay ? 'animate-fadeInRight' : ''
             }`}>
             <div
@@ -166,24 +167,24 @@ const WeddingDay = () => {
               } animation-delay-0 opacity-0`}>
               <Title
                 label={common.greeting}
-                className='uppercase md:text-[30px]! text-[26px]! font-normal'
+                className='uppercase text-[26px]! font-normal'
               />
-              <Description label={common.guest} className='text-2xl! text-primary' />
+              <Description label={common.guest} className='text-2xl! mt-2 text-primary' />
             </div>
             <div
               className={`${
                 inViewTop ? 'animate-fadeInUpShow' : ''
-              } animate-delay-500 opacity-0`}>
+              } animate-delay-500 opacity-0 mt-3`}>
               <Description label={common.inviteLine1} />
               <Description label={common.inviteLine2} className='mt-1' />
             </div>
             <div
               className={`${
                 inViewTop ? 'animate-fadeInUp' : ''
-              } animation-delay-500 opacity-0`}>
+              } animation-delay-500 opacity-0 `}>
               <Title
                 label={common.couple}
-                className='font-UVFAphroditePro animate-decorFloatReverse1s text-[30px]! md:text-4xl! my-6 text-gray-700'
+                className='font-SVNAstronout! font-normal leading-[70px] md:leading-[80px] animate-decorFloatReverse1s text-[110px]! md:text-[135px]! my-6 text-gray-700'
               />
             </div>
             <div
@@ -207,7 +208,7 @@ const WeddingDay = () => {
               <Title label={side.intimate.location} className='text-primary' />
               <Description label={side.intimate.address} className='text-dark' />
             </div>
-            <div ref={refBottom} className='flex-center flex-col mt-4 space-y-2 '>
+            <div ref={refBottom} className='flex-center flex-col mt-4 space-y-3 '>
               <img
                 src='/assets/logo.png'
                 alt=''
@@ -237,8 +238,8 @@ const WeddingDay = () => {
                 <Description label={side.wedding.address} />
               </div>
               <p
-                className='animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-9 leading-7 text-[3.7vw]
-               md:text-[1.08vw]
+                className='animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-9 leading-7 text-[3vw]
+               md:text-[0.78vw]
                mt-6 italic font-UVFAphroditePro'>
                 {common.closing}
               </p>

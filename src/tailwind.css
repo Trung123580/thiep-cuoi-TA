@@ -10,6 +10,7 @@
   --text-shadow-md: 0 10px 10px #000;
   --text-shadow-sm: 0 2px 5px #000;
   --shadow-medium: 0 5px 10px 1px #000;
+  --shadow-medium-red: 0 5px 10px 1px var(--color-primary);
   --shadow-red: 0 0px 10px 1px var(--color-primary);
 
   --animate-rotate: rotate 4s linear infinite;
@@ -446,8 +447,9 @@
 } */
 
 body {
-  @apply text-white;
+  @apply text-white font-UTMBryantLG scroll-smooth;
 }
+
 @layer utilities {
   button {
     @apply cursor-pointer;

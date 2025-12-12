@@ -1,164 +1,59 @@
-// import { gsap } from 'gsap'
-// import { ScrollTrigger, ScrollSmoother } from 'gsap/all'
-// import { useGSAP } from '@gsap/react'
-import SplitTextUI from './components/ui/SplitTextUI'
 import Banner from './components/Banner'
-import { useEffect } from 'react'
-import { useAppSelector } from './components/hooks/useStore'
 import WeddingDay from './components/WeddingDay'
-// gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP)
+import WeddingTimeLine from './components/WeddingTimeLine'
+import Modal from './components/Modal'
+import { useEffect, useState } from 'react'
+import WeddingAttenDing from './components/WeddingAttenDing'
 function App() {
-  const {
-    storeAction: { isOpen },
-  } = useAppSelector((state) => state)
-  console.log({ isOpen })
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   useEffect(() => {
-    if (window.innerWidth > 768) return
-    // const smoother = ScrollSmoother.create({
-    //   wrapper: '#smooth-wrapper',
-    //   content: '#smooth-content',
-    //   smooth: 1.8,
-    //   effects: true,
-    //   smoothTouch: 0.1,
-    //   normalizeScroll: true,
-    //   ignoreMobileResize: true,
-    // })
-    // smoother.scrollTop(0)
-
-    // return () => {
-    //   smoother.kill()
-    //   ScrollTrigger.refresh()
-    // }
+    setTimeout(() => {
+      setIsOpenModal(true)
+    }, 90000)
   }, [])
-  // useGSAP(
-  //   () => {
-  //     const boxes = gsap.utils.toArray('.box')
-  //     boxes.forEach((box: any) => {
-  //       gsap.to(box, {
-  //         x: 150,
-  //         scrollTrigger: {
-  //           trigger: box,
-  //           start: 'top bottom ',
-  //           end: 'top 0%',
-  //           scrub: true,
-  //         },
-  //       })
-  //     })
-  //   },
-  //   { scope: main }
-  // )
-
-  // useEffect(() => {
-  //   const boxes = gsap.utils.toArray('.section')
-  //   boxes.forEach((box: any, i) => {
-  //     gsap.to(box, {
-  //       x: 150,
-  //       animationDelay: i * 0.5,
-  //       scrollTrigger: {
-  //         trigger: box,
-  //         start: 'top bottom ',
-  //         end: 'top 0%',
-  //         scrub: true,
-  //       },
-  //     })
-  //   })
-  // })
-
-  // const handleScroll = (e: Event) => {
-  //   console.log(e)
-  // }
-
-  // useEffect(() => {
-  //   const sections = document.querySelectorAll('.section')
-
-  //   // if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-
-  //   // }
-  //   console.log(sections)
-  //   // sections.forEach((element) => {
-  //   //   console.log(element.className)
-
-  //   //   const domElement = element.getBoundingClientRect()
-  //   //   console.log({ domElement })
-  //   // })
-
-  //   window.addEventListener('scroll', handleScroll)
-  //   return () => window.removeEventListener('scroll', handleScroll)
-  //   // const observer = new IntersectionObserver(
-  //   //   (entries) => {
-  //   //     // entries.forEach((entry) => {
-  //   //     //   if (entry.isIntersecting) {
-  //   //     //     entry.target.classList.add('show')
-  //   //     //   } else {
-  //   //     //     entry.target.classList.remove('show')
-  //   //     //   }
-  //   //     // })
-  //   //     if (entries[0].isIntersecting) {
-  //   //       // if (entries[0].target.classList.contains('show')) {
-  //   //       //   entries[0].target.classList.remove('show')
-  //   //       //   return
-  //   //       // }
-
-  //   //       entries[0].target.classList.add('show')
-  //   //     } else {
-  //   //       entries[0].target.classList.remove('show')
-  //   //     }
-  //   //   },
-  //   //   {
-  //   //     threshold: 0.5,
-  //   //     rootMargin: '0px 0px 0px 0px',
-  //   //   }
-  //   // )
-  //   // sections.forEach((section) => observer.observe(section))
-  // }, [])
 
   useEffect(() => {
-    const sections = document.querySelectorAll('.section')
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show')
-          }
-          // else {
-          //   entry.target.classList.remove('show')
-          // }
-        })
-      },
-      {
-        threshold: 0.2, // 30% phần tử xuất hiện thì add class
-        // rootMargin: '0px 400px 0px 400px',
-      }
-    )
-
-    sections.forEach((sec) => observer.observe(sec))
-
-    return () => observer.disconnect()
-  }, [])
-
+    if (isOpenModal) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpenModal])
   return (
-    <div className='smooth-wrapper'>
-      <div className='smooth-content '>
-        <div className=''>
-          <Banner />
-          <WeddingDay />
-
-          <section
-            className='h-[700px] section section-3 bg-blue-200'
-            data-class='left'></section>
-          <section
-            data-class='bottom'
-            className='h-[700px] section-4 bg-green-400'></section>
-          <section data-class='right' className='h-[700px] section section-5'>
-            <SplitTextUI classGsap='title' className='text-9xl font-bold'>
-              Hello World
-            </SplitTextUI>
-          </section>
+    <main>
+      <Banner />
+      <WeddingDay />
+      <WeddingTimeLine />
+      <WeddingAttenDing />
+      <Modal isOpen={isOpenModal} onToggle={() => setIsOpenModal(!isOpenModal)}>
+        <div className='px-5 w-[400px] h-[150px] bg-white rounded-xl flex-center relative'>
+          <button
+            onClick={() => setIsOpenModal(false)}
+            className='absolute top-1 right-1 w-6 h-6 rounded-full bg-dark text-white flex-center hover:bg-opacity-80 transition'
+            aria-label='Close modal'>
+            &times;
+          </button>
+          <div className='flex flex-col gap-5'>
+            <h1 className='text-black text-3xl font-UVFAphroditePro'>
+              Bạn sẽ tham dự chứ ?
+            </h1>
+            <button
+              onClick={() => {
+                document.getElementById('form-submit')?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                  inline: 'start',
+                })
+                setIsOpenModal(false)
+              }}
+              className='text-center cursor-pointer rounded-lg text-2xl font-bold text-white bg-dark px-4 py-2 leading-6'>
+              <span className='relative -top-0.5'>Xác nhận tham gia</span>
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
+      </Modal>
+    </main>
   )
 }
 

@@ -59,7 +59,7 @@ export default function DragConstraints() {
             bounceStiffness: 600,
             bounceDamping: 10,
           }}
-          className={isPlay ? 'shadow-red animate-pulse' : 'shadow-xl'}
+          className={isPlay ? 'shadow-red ' : 'shadow-xl'}
           style={box}
           onDoubleClick={() => {
             handlePlayMusic()
@@ -91,27 +91,6 @@ export default function DragConstraints() {
           </div>
         </motion.div>
       </motion.div>
-      {/* <div className='rounded-full h-[50px] w-[50px] overflow-hidden'>
-        <div
-          className={`bg-white  w-full h-full ${
-            isPlay ? 'animate-rotate shadow-red' : ''
-          } flex-center  cursor-pointer`}>
-          <img
-            src={!isPlay ? '/assets/btn-play-pause.jpg' : '/assets/btn-play.jpg'}
-            alt=''
-            width={30}
-            className='rounded-full object-contain'
-            style={
-              {
-                pointerEvents: 'auto',
-                userSelect: 'none',
-                WebkitUserDrag: 'none',
-                animationDuration: '1300ms',
-              } as React.CSSProperties
-            }
-          />
-        </div>
-      </div> */}
     </div>
   )
 }
