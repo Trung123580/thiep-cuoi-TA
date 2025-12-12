@@ -54,18 +54,18 @@ const WeddingMoments = () => {
         <a
           ref={refXemThem}
           href='#gallery-1'
-          className='text-black inline-flex items-center gap-10 md:gap-20 flex-col'>
+          className='text-black inline-flex items-center gap-10 md:gap-14 flex-col'>
           <SplitTextUI
             isRun={inViewXemThem}
             duration={1}
             classGsap='title'
-            className='text-[40px] leading-0 md:text-7xl text-black font-UVFAphroditePro'>
+            className='text-[40px] leading-0 md:text-5xl text-black font-UVFAphroditePro'>
             Xem Thêm
           </SplitTextUI>
           <img
             className={`${
               inViewXemThem ? 'animate-fadeInDown' : ''
-            } w-18 md:w-30 animation-delay-500 opacity-0`}
+            } w-18 md:w-24 animation-delay-500 opacity-0`}
             src='/assets/arrow-bottom.png'
             alt=''
           />

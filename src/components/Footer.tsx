@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer
       ref={ref}
-      className='flex-center relative flex-col mt-10 md:mt-40 max-w-[1000px] mx-auto'>
+      className='flex-center relative flex-col mt-20 md:mt-40 max-w-[1000px] mx-auto'>
       <SplitTextUI
         isRun={inView}
         duration={2}

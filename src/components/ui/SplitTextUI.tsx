@@ -38,7 +38,7 @@ const SplitTextUI = ({
     })
 
     split.chars?.forEach((char) => {
-      char.classList.add('text-gradient')
+      char.classList.add('mr-0.5')
     })
 
     gsap.set(split.chars, {

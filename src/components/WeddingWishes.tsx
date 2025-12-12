@@ -63,7 +63,7 @@ const WeddingWishes = () => {
               alt=''
             />
           </div>
-          <div className='flex text-black *:shadow-medium/30 *:rounded-sm mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-2xl text-center capitalize'>
+          <div className='flex text-black *:shadow-medium/30 *:rounded-sm mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base md:text-2xl text-center capitalize'>
             <button onClick={() => downloadImage('qr-1')}>Tải ảnh QR</button>
             <button
               onClick={() => {
@@ -87,7 +87,7 @@ const WeddingWishes = () => {
               alt=''
             />
           </div>
-          <div className='flex *:shadow-medium/30 *:rounded-sm text-black mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-2xl text-center capitalize'>
+          <div className='flex *:shadow-medium/30 *:rounded-sm text-black mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base  md:text-2xl text-center capitalize'>
             <button onClick={() => downloadImage('qr-2')}>Tải ảnh QR</button>
             <button
               onClick={() => {
