@@ -13,7 +13,7 @@ const data = {
     groom: {
       intimate: {
         title: 'TIỆC THÂN MẬT NHÀ TRAI',
-        time: 'Tổ chức vào lúc 17 giờ 00 phút',
+        time: 'Tổ chức vào lúc 16 giờ 00 phút',
         date: 'Chủ Nhật, ngày 28 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 09 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Trai',
@@ -38,7 +38,7 @@ const data = {
         address: 'Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
       },
       wedding: {
-        title: 'TIỆC THÀNH HÔN NHÀ GÁI',
+        title: 'TIỆC LỄ VU QUY NHÀ GÁI',
         time: 'Tổ chức vào lúc 08 giờ 00 phút',
         date: 'Thứ Hai, ngày 29 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 10 tháng 11 năm Ất Tỵ)',
@@ -239,7 +239,7 @@ const WeddingDay = () => {
               </div>
               <p
                 className='animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-9 leading-7 text-[3vw]
-               md:text-[0.78vw]
+               md:text-[1.14vw]
                mt-6 italic font-UVFAphroditePro'>
                 {common.closing}
               </p>
