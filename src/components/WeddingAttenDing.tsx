@@ -21,8 +21,10 @@ const WeddingAttenDing = () => {
   // })
   return (
     <>
-      <div className='mt-10 md:mt-20'></div>
-      <section id='form-submit' ref={ref} className='pt-20 text-center md:px-0 px-3'>
+      <section
+        id='form-submit'
+        ref={ref}
+        className='pt-20 text-center md:px-0 px-3  mt-10 md:mt-20'>
         <SplitTextUI
           isRun={inView}
           duration={1}
