@@ -59,11 +59,11 @@ const WeddingWishes = () => {
             <img
               id='qr-1'
               src='/assets/qr-trai.jpg'
-              className='w-full h-full object-contain'
+              className='w-full h-[450px] object-cover'
               alt=''
             />
           </div>
-          <div className='*:py-1 flex text-black *:shadow-medium/30 *:rounded-sm mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base md:text-xl text-center capitalize'>
+          <div className='*:py-1 flex-1 flex text-black *:shadow-medium/30 *:rounded-sm mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base md:text-xl text-center capitalize'>
             <button
               className='active:top-1 relative'
               onClick={() => downloadImage('qr-1')}>
@@ -71,7 +71,7 @@ const WeddingWishes = () => {
             </button>
             <button
               onClick={() => {
-                navigator.clipboard.writeText('103875413789')
+                navigator.clipboard.writeText('106867926349')
               }}
               className='active:top-1 relative'>
               Copy STK
@@ -87,8 +87,8 @@ const WeddingWishes = () => {
           <div className='shadow-medium/30  rounded-lg overflow-hidden'>
             <img
               id='qr-2'
-              src='/assets/qr-trai.jpg'
-              className='w-full h-full object-contain '
+              src='/assets/qr-gai.jpg'
+              className='w-full h-[450px] object-cover'
               alt=''
             />
           </div>
@@ -100,7 +100,7 @@ const WeddingWishes = () => {
             </button>
             <button
               onClick={() => {
-                navigator.clipboard.writeText('103875413789')
+                navigator.clipboard.writeText('103003498662')
               }}
               className='active:top-1  relative'>
               Copy STK

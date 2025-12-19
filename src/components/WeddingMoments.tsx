@@ -166,7 +166,7 @@ const WeddingMoments = () => {
               </div>
             </div>
           </div>
-          <div className='relative md:-top-38 -top-0 h-[1190px] md:h-[2330px]' ref={ref5}>
+          <div className='relative md:-top-38 -top-0 h-[1190px] md:h-[2530px]' ref={ref5}>
             <div className='flex md:flex-row flex-col  relative z-10'>
               <div className='h-full w-full md:w-[35%] flex-center md:items-center items-start flex-col'>
                 <img
@@ -184,7 +184,7 @@ const WeddingMoments = () => {
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative md:top-0 top-40`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
-                      className='h-auto md:h-[500px] w-full object-cover'
+                      className='h-auto md:h-[550px] w-full object-cover'
                       alt=''
                     />
                     <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
@@ -196,7 +196,7 @@ const WeddingMoments = () => {
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative `}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
-                      className='h-auto md:h-[500px] w-full'
+                      className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
                     <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
@@ -213,7 +213,7 @@ const WeddingMoments = () => {
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
-                      className='h-auto md:h-[500px] w-full'
+                      className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
                     <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
@@ -225,7 +225,7 @@ const WeddingMoments = () => {
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
-                      className='h-auto md:h-[500px] w-full'
+                      className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
                     <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
@@ -237,7 +237,7 @@ const WeddingMoments = () => {
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary md:block hidden p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
-                      className='h-auto md:h-[500px] w-full'
+                      className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
                     <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
@@ -251,7 +251,7 @@ const WeddingMoments = () => {
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary w-full p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
-                      className='h-auto md:h-[500px]  w-full object-cover'
+                      className='h-auto md:h-[550px]  w-full object-cover'
                       alt=''
                     />
                     <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
@@ -263,7 +263,7 @@ const WeddingMoments = () => {
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
-                      className='h-auto md:h-[500px] w-full'
+                      className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
                     <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
