@@ -48,7 +48,7 @@ const WeddingWishes = () => {
         của các bạn.
       </SplitTextUI>
 
-      <div className='flex gap-20 w-full mt-15 md:mt-30 md:flex-row flex-col'>
+      <div className='flex gap-60 w-full mt-15 md:mt-30 md:flex-row flex-col'>
         <div
           ref={refOne}
           className={`${
@@ -63,13 +63,18 @@ const WeddingWishes = () => {
               alt=''
             />
           </div>
-          <div className='flex text-black *:shadow-medium/30 *:rounded-sm mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base md:text-2xl text-center capitalize'>
-            <button onClick={() => downloadImage('qr-1')}>Tải ảnh QR</button>
+          <div className='*:py-1 flex text-black *:shadow-medium/30 *:rounded-sm mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base md:text-xl text-center capitalize'>
+            <button
+              className='active:top-1 relative'
+              onClick={() => downloadImage('qr-1')}>
+              Tải ảnh QR
+            </button>
             <button
               onClick={() => {
                 navigator.clipboard.writeText('103875413789')
-              }}>
-              Copy stk
+              }}
+              className='active:top-1 relative'>
+              Copy STK
             </button>
           </div>
         </div>
@@ -87,13 +92,18 @@ const WeddingWishes = () => {
               alt=''
             />
           </div>
-          <div className='flex *:shadow-medium/30 *:rounded-sm text-black mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base  md:text-2xl text-center capitalize'>
-            <button onClick={() => downloadImage('qr-2')}>Tải ảnh QR</button>
+          <div className='*:py-1 flex *:shadow-medium/30 *:rounded-sm text-black mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base  md:text-xl text-center capitalize'>
+            <button
+              onClick={() => downloadImage('qr-2')}
+              className='active:top-1  relative'>
+              Tải ảnh QR
+            </button>
             <button
               onClick={() => {
                 navigator.clipboard.writeText('103875413789')
-              }}>
-              Copy stk
+              }}
+              className='active:top-1  relative'>
+              Copy STK
             </button>
           </div>
         </div>

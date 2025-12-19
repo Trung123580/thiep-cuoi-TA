@@ -16,9 +16,9 @@ const WeddingMoments = () => {
   const { ref: ref3, inView: inView3 } = useInView({ threshold: 0.2 })
   const { ref: ref4, inView: inView4 } = useInView({ threshold: 0 })
   const { ref: ref5, inView: inView5 } = useInView({ threshold: 0 })
-  // const { ref: ref6, inView: inView6 } = useInView({ threshold: 0.2 })
-  // const { ref: ref7, inView: inView7 } = useInView({ threshold: 0.2 })
-  // const { ref: ref8, inView: inView8 } = useInView({ threshold: 0.2 })
+  const { ref: ref6, inView: inView6 } = useInView({ threshold: 0 })
+  const { ref: ref7, inView: inView7 } = useInView({ threshold: 0 })
+  const { ref: ref8, inView: inView8 } = useInView({ threshold: 0 })
   // const { ref: ref9, inView: inView9 } = useInView({ threshold: 0.2 })
   console.log({ inView3, inView2 })
 
@@ -67,7 +67,7 @@ const WeddingMoments = () => {
             ]}
           />
         </div>
-        <div className='w-full mb-30'>
+        <div className='w-full'>
           <div
             className={`flex relative justify-between opacity-0 *:w-[calc(50%_-_10px)] md:*:w-[calc(35%_-_50px)] ${
               inView2 || inView1 ? 'animate-fadeInLeft animation-delay-500' : ''
@@ -99,9 +99,7 @@ const WeddingMoments = () => {
               <div className='absolute md:bottom-36 bottom-24 h-[1px] md:right-[-8vw] right-[-16vw] w-2/3 rotate-90 bg-primary'></div>
             </div>
             <div
-              className={`${
-                inView2 || inView1 ? 'animate-fadeInRight animation-delay-1000' : ''
-              }  border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 absolute md:relative w-[52vw]! left-1/2 -translate-x-1/2 top-[45%] md:hidden`}>
+              className={` border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 absolute md:relative w-[52vw]! left-1/2 -translate-x-1/2 top-[45%] md:hidden`}>
               <img src='/assets/tien-anh/anh-1.jpg' className='' alt='' />
               <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
               <div className='absolute bottom-24 h-[1px] right-[-19vw] w-2/3 rotate-90 bg-primary'></div>
@@ -132,8 +130,7 @@ const WeddingMoments = () => {
               <div
                 className={`${
                   inView4 ? 'animate-fadeInLeft' : ''
-                } w-[530px] h-[530px] rounded-full opacity-0 overflow-hidden`}
-                ref={ref4}>
+                } w-[530px] h-[530px] rounded-full opacity-0 overflow-hidden`}>
                 <motion.img
                   src='/assets/chung/anh-2.jpg'
                   className={`w-full h-full object-cover  `}
@@ -143,6 +140,7 @@ const WeddingMoments = () => {
                 />
               </div>
               <div
+                ref={ref4}
                 className={`${
                   inView4 ? 'animate-fadeInDown' : ''
                 } w-[400px] h-[400px] rounded-full  animation-delay-500 relative opacity-0 top-20 md:top-40 overflow-hidden`}>
@@ -168,7 +166,7 @@ const WeddingMoments = () => {
               </div>
             </div>
           </div>
-          <div className='relative md:-top-38 -top-0 h-[1490px] md:h-[2330px]' ref={ref5}>
+          <div className='relative md:-top-38 -top-0 h-[1190px] md:h-[2330px]' ref={ref5}>
             <div className='flex md:flex-row flex-col  relative z-10'>
               <div className='h-full w-full md:w-[35%] flex-center md:items-center items-start flex-col'>
                 <img
@@ -180,8 +178,9 @@ const WeddingMoments = () => {
                 />
                 <div className='md:relative absolute top-10 md:top-0 flex md:flex-col w-full gap-7 md:gap-10 md:w-auto flex-1 md:min-w-[421px] md:px-0 px-5'>
                   <div
+                    ref={ref6}
                     className={`${
-                      inView5 ? 'animate-fadeInUp animation-delay-1000' : ''
+                      inView6 ? 'animate-fadeInUp animation-delay-1000' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative md:top-0 top-40`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
@@ -193,7 +192,7 @@ const WeddingMoments = () => {
                   </div>
                   <div
                     className={`${
-                      inView5 ? 'animate-fadeInRight animation-delay-1000' : ''
+                      inView8 ? 'animate-fadeInRight animation-delay-1000' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative `}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
@@ -208,8 +207,9 @@ const WeddingMoments = () => {
               <div className='text-black flex justify-between md:relative absolute top-[17%] gap-6 md:gap-12 ml-2 flex-1 mt-42 md:mt-70 pr-3'>
                 <div className='flex flex-col gap-10 relative top-40 md:top-44 flex-1'>
                   <div
+                    ref={ref7}
                     className={`${
-                      inView5 ? 'animate-fadeInUp animation-delay-1000' : ''
+                      inView7 ? 'animate-fadeInUp ' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
@@ -221,7 +221,7 @@ const WeddingMoments = () => {
                   </div>
                   <div
                     className={`${
-                      inView5 ? 'animate-fadeInRight animation-delay-1000' : ''
+                      inView8 || inView7 ? 'animate-fadeInRight animation-delay-250' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
@@ -233,8 +233,8 @@ const WeddingMoments = () => {
                   </div>
                   <div
                     className={`${
-                      inView5 ? 'animate-fadeInRight animation-delay-1000' : ''
-                    } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
+                      inView8 ? 'animate-fadeInRight animation-delay-500' : ''
+                    } border border-t-0 border-r-0 pt-0 pr-0 border-primary md:block hidden p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
                       className='h-auto md:h-[500px] w-full'
@@ -247,7 +247,7 @@ const WeddingMoments = () => {
                 <div className='flex flex-col gap-10 flex-1'>
                   <div
                     className={`${
-                      inView5 ? 'animate-fadeInUp animation-delay-1000' : ''
+                      inView7 ? 'animate-fadeInUp animation-delay-250' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary w-full p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
@@ -259,7 +259,7 @@ const WeddingMoments = () => {
                   </div>
                   <div
                     className={`${
-                      inView5 ? 'animate-fadeInRight animation-delay-1000' : ''
+                      inView8 || inView7 ? 'animate-fadeInRight animation-delay-500' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
                     <img
                       src='/assets/hai-ly/anh-2.jpg'
@@ -272,10 +272,12 @@ const WeddingMoments = () => {
                 </div>
               </div>
             </div>
-            <div className='absolute right-0 bottom-0 w-[80%] md:w-[40%]'>
+            <div ref={ref8} className='absolute right-0 bottom-0 w-[80%] md:w-[40%]'>
               <img
                 src={'/assets/chung/chim-right-2.png'}
-                className='object-contain w-full'
+                className={`object-contain w-full opacity-0 ${
+                  inView8 ? 'animate-fadeInDown animation-delay-1000' : ''
+                }`}
                 alt='img'
               />
             </div>
@@ -284,7 +286,7 @@ const WeddingMoments = () => {
         <a
           ref={refXemThem}
           href='#gallery-1'
-          className='text-black mt-40 inline-flex items-center gap-10 md:gap-14 flex-col'>
+          className='text-black relative z-10 flex items-center gap-10 md:gap-14 flex-col'>
           <SplitTextUI
             isRun={inViewXemThem}
             duration={1}
