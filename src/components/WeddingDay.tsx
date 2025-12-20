@@ -21,7 +21,7 @@ const data = {
       },
       wedding: {
         title: 'TIỆC THÀNH HÔN NHÀ TRAI',
-        time: 'Tổ chức vào lúc 08 giờ 30 phút',
+        time: 'Tổ chức vào lúc 11 giờ 00 phút',
         date: 'Thứ Hai, ngày 29 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 10 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Trai',
@@ -31,19 +31,19 @@ const data = {
     bride: {
       intimate: {
         title: 'TIỆC THÂN MẬT NHÀ GÁI',
-        time: 'Tổ chức vào lúc 17 giờ 00 phút',
-        date: 'Thứ Bảy, ngày 27 tháng 12 năm 2025',
-        lunarDate: '(Tức ngày 08 tháng 11 năm Ất Tỵ)',
+        time: 'Tổ chức vào lúc 16 giờ 00 phút',
+        date: 'Thứ Bảy, ngày 28 tháng 12 năm 2025',
+        lunarDate: '(Tức ngày 09 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Gái',
-        address: 'Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
+        address: 'Quan Châm, Phú Nghĩa, Hà Nội',
       },
       wedding: {
         title: 'TIỆC LỄ VU QUY NHÀ GÁI',
-        time: 'Tổ chức vào lúc 08 giờ 00 phút',
+        time: 'Tổ chức vào lúc 11 giờ 00 phút',
         date: 'Thứ Hai, ngày 29 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 10 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Gái',
-        address: 'Quan Châm, Phú Nghĩa, Chương Mỹ, Hà Nội',
+        address: 'Xóm Quyển, Quyết Thắng, Phú Thọ',
       },
     },
     common: {
