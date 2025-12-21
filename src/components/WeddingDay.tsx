@@ -12,6 +12,7 @@ const data = {
   invitation: {
     groom: {
       intimate: {
+        inviteLine1: 'Tới dự bữa Tiệc Thân Mật & Thành Hôn',
         title: 'TIỆC THÂN MẬT NHÀ TRAI',
         time: 'Tổ chức vào lúc 16 giờ 00 phút',
         date: 'Chủ Nhật, ngày 28 tháng 12 năm 2025',
@@ -30,6 +31,7 @@ const data = {
     },
     bride: {
       intimate: {
+        inviteLine1: 'Tới dự bữa Tiệc Thân Mật & Vu Quy',
         title: 'TIỆC THÂN MẬT NHÀ GÁI',
         time: 'Tổ chức vào lúc 16 giờ 00 phút',
         date: 'Chủ Nhật, ngày 28 tháng 12 năm 2025',
@@ -89,6 +91,8 @@ const WeddingDay = () => {
 
   const side = data.invitation[activeSide]
   const common = data.invitation.common
+
+  console.log({ side })
 
   return (
     <section ref={ref} className='mt-30 md:mt-40 section-2 text-center' data-class='left'>
@@ -175,7 +179,7 @@ const WeddingDay = () => {
               className={`${
                 inViewTop ? 'animate-fadeInUpShow' : ''
               } animate-delay-500 opacity-0 mt-3`}>
-              <Description label={common.inviteLine1} />
+              <Description label={side.intimate.inviteLine1} />
               <Description label={common.inviteLine2} className='mt-1' />
             </div>
             <div

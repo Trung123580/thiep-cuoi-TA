@@ -68,15 +68,12 @@ const WeddingTimeLine = () => {
 
   useEffect(() => {
     if (dataTimeLine.length) {
-      const mapData = dataTimeLine.map((item, index) => {
-        return {
-          ...item,
-          ref: refItem[index],
-        }
-      })
+      const mapData = dataTimeLine.map((item, index) => ({
+        ...item,
+        ref: refItem[index],
+      }))
       setDataRender(mapData)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refItem])
   return (
     <section ref={ref} className='mt-25 md:mt-40  text-center'>
