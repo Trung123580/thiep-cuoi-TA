@@ -49,17 +49,14 @@ const WeddingMoments = () => {
               '/assets/xem-them/anh-2.webp',
               '/assets/moment/anh-4.png',
               '/assets/moment/anh-2.webp',
-              '/assets/xem-them/anh-4.webp',
               '/assets/moment/anh-1.webp',
-              '/assets/xem-them/anh-5.webp',
               '/assets/moment/anh-3.webp',
-              '/assets/xem-them/anh-6.webp',
               '/assets/xem-them/anh-7.webp',
               '/assets/moment/anh-6.webp',
               '/assets/moment/anh-5.webp',
               '/assets/xem-them/anh-8.webp',
               '/assets/xem-them/anh-9.webp',
-              '/assets/xem-them/anh-10.webp',
+              // '/assets/xem-them/anh-10.webp',
               '/assets/xem-them/anh-11.webp',
               '/assets/moment/anh-7.webp',
             ]}
@@ -133,7 +130,7 @@ const WeddingMoments = () => {
               className='object-contain w-full h-full'
               alt='img'
             />
-            <div className='absolute right-0 top-[85%] -translate-y-1/2 max-w-3/4'>
+            <div className='absolute right-2.5 top-[90%] -translate-y-1/2 max-w-3/4'>
               <img
                 src='/assets/chung/chim-right.png'
                 className={`${
@@ -175,9 +172,9 @@ const WeddingMoments = () => {
                 ref={ref11}
                 className={` ${
                   inView11 ? 'animate-fadeInRight' : ''
-                } md:w-[250px]  rounded-full relative animation-delay-1000 opacity-0 top-10 md:-top-24 overflow-hidden`}>
+                } md:w-[250px] h-[250px]  rounded-full relative animation-delay-1000 opacity-0 top-10 md:-top-24 overflow-hidden`}>
                 <motion.img
-                  src='/assets/chung/anh-4.png'
+                  src='/assets/moment/anh-1.webp'
                   className={`w-full h-full object-cover `}
                   initial={{ objectPosition: 'center 40%' }}
                   animate={{ objectPosition: 'center 20%' }}

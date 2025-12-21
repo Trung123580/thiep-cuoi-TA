@@ -31,15 +31,15 @@ const data = {
     bride: {
       intimate: {
         title: 'TIỆC THÂN MẬT NHÀ GÁI',
-        time: 'Tổ chức vào lúc 16 giờ 00 phút',
+        time: 'Tổ chức vào lúc 17 giờ 00 phút',
         date: 'Chủ Nhật, ngày 28 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 09 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Gái',
-        address: 'Quan Châm, Phú Nghĩa, Hà Nội',
+        address: 'Xóm Quyển, Quyết Thắng, Phú Thọ',
       },
       wedding: {
         title: 'TIỆC LỄ VU QUY NHÀ GÁI',
-        time: 'Tổ chức vào lúc 11 giờ 00 phút',
+        time: 'Tổ chức vào lúc 08 giờ 00 phút',
         date: 'Thứ Hai, ngày 29 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 10 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Gái',
@@ -49,7 +49,7 @@ const data = {
     common: {
       greeting: 'Trân trọng kính mời',
       guest: 'Quý khách',
-      inviteLine1: 'Tới dự bữa Tiệc Thân Mật & tiệc Lễ Vu Quy chung vui',
+      inviteLine1: 'Tới dự bữa Tiệc Thân Mật & Thành Hôn',
       inviteLine2: 'cùng gia đình chúng tôi',
       couple: 'Tiến Anh & Hải Lý ',
       closing: 'Sự hiện diện của quý khách là niềm vinh dự cho gia đình chúng tôi !',

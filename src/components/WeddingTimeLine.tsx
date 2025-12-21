@@ -25,25 +25,25 @@ const dataTimeLine: ITimeLine[] = [
   {
     id: idv4(),
     image: '/assets/time-2.webp',
-    title: '11:00 thứ 2, ngày 29.12.2025',
+    title: '16:00 chủ nhật, ngày 28.12.2025',
     date: '28/12/2025',
-    description: 'Lễ Thành Hôn',
-    description2: 'Nhà Trai',
+    description: 'Tiệc Thân Mật',
+    description2: 'Nhà Gái',
     className: 'animate-fadeInUpShow ',
   },
   {
     id: idv4(),
     image: '/assets/time-3.webp',
-    title: '11:30 thứ 2, ngày 29.12.2025',
+    title: '08:00 thứ 2, ngày 29.12.2025',
     date: '29/12/2025',
-    description: 'Lễ Thành Hôn',
-    description2: 'Nhà Trai',
+    description: 'Lễ Vu Quy',
+    description2: 'Nhà Gái',
     className: 'animate-fadeInUpShow ',
   },
   {
     id: idv4(),
     image: '/assets/time-4.webp',
-    title: '11:30  chủ nhật, ngày 29.12.2025',
+    title: '11:00  chủ nhật, ngày 29.12.2025',
     date: '29/12/2025',
     description: 'Lễ Thành Hôn',
     description2: 'Nhà Trai',
@@ -160,7 +160,7 @@ const WeddingTimeLine = () => {
                           {title}
                         </span>
                         <div className='font-UVFAphroditePro text-center text-xl md:text-2xl mt-2 leading-10'>
-                          <span>{description}</span>
+                          <span className='tracking-wide leading-10'>{description}</span>
                           <br />
                           <span>{description2}</span>
                         </div>

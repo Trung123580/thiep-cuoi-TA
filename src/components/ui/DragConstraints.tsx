@@ -30,6 +30,7 @@ export default function DragConstraints() {
   }
   useEffect(() => {
     if (refMusic.current) {
+      refMusic.current.volume = 0.3
       refMusic.current.addEventListener('play', () => {
         setStateAudio({
           isPlay: true,

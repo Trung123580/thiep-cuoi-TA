@@ -1,3 +1,4 @@
+import GoogleMaps from './GoogleMaps'
 import SplitTextUI from './ui/SplitTextUI'
 import { useInView } from 'react-intersection-observer'
 
@@ -77,6 +78,7 @@ const WeddingWishes = () => {
               Copy STK
             </button>
           </div>
+          <GoogleMaps src='https://maps.google.com/maps?width=380&height=250&hl=en&q=20%C2%B055%2750.1%22N%20105%C2%B039%2719.1%22E&t=&z=14&ie=UTF8&iwloc=B&output=embed' />
         </div>
         <div
           ref={refTwo}
@@ -106,6 +108,7 @@ const WeddingWishes = () => {
               Copy STK
             </button>
           </div>
+          <GoogleMaps src='https://maps.google.com/maps?width=380&height=250&hl=en&q=20.4968720%2C105.3565700&t=&z=14&ie=UTF8&iwloc=B&output=embed' />
         </div>
       </div>
     </section>
