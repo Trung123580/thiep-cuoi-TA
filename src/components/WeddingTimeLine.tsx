@@ -15,8 +15,8 @@ interface ITimeLine {
 const dataTimeLine: ITimeLine[] = [
   {
     id: idv4(),
-    image: '/assets/time-1.png',
-    title: '15:30 chủ nhật, ngày 28.12.2025',
+    image: '/assets/time-1.webp',
+    title: '16:00 chủ nhật, ngày 28.12.2025',
     date: '28/12/2025',
     description: 'Tiệc Thân Mật',
     description2: 'Nhà Trai',
@@ -24,36 +24,36 @@ const dataTimeLine: ITimeLine[] = [
   },
   {
     id: idv4(),
-    image: '/assets/time-2.png',
-    title: '15:30 chủ nhật, ngày 28.12.2025',
+    image: '/assets/time-2.webp',
+    title: '11:00 thứ 2, ngày 29.12.2025',
     date: '28/12/2025',
-    description: 'Tiệc Thân Mật',
+    description: 'Lễ Thành Hôn',
     description2: 'Nhà Trai',
     className: 'animate-fadeInUpShow ',
   },
   {
     id: idv4(),
-    image: '/assets/time-3.png',
-    title: '15:30 thứ hai, ngày 29.12.2025',
+    image: '/assets/time-3.webp',
+    title: '11:30 thứ 2, ngày 29.12.2025',
     date: '29/12/2025',
-    description: 'Tiệc Thân Mật',
+    description: 'Lễ Thành Hôn',
     description2: 'Nhà Trai',
     className: 'animate-fadeInUpShow ',
   },
   {
     id: idv4(),
-    image: '/assets/time-4.png',
-    title: '15:30 chủ nhật, ngày 29.12.2025',
+    image: '/assets/time-4.webp',
+    title: '11:30  chủ nhật, ngày 29.12.2025',
     date: '29/12/2025',
-    description: 'Tiệc Thân Mật',
+    description: 'Lễ Thành Hôn',
     description2: 'Nhà Trai',
     className: 'animate-fadeInUpShow ',
   },
 ]
 const WeddingTimeLine = () => {
   const { ref, inView } = useInView({ threshold: 0 })
-  const { ref: refOne, inView: inViewOne } = useInView({ threshold: 0 })
-  const { ref: refTwo, inView: inViewTwo } = useInView({ threshold: 0.1 })
+  // const { ref: refOne, inView: inViewOne } = useInView({ threshold: 0 })
+  // const { ref: refTwo, inView: inViewTwo } = useInView({ threshold: 0.1 })
   const { ref: refThree, inView: inViewThree } = useInView({ threshold: 0.1 })
 
   const { ref: ref1, inView: inView1 } = useInView({ threshold: 0.2 })
@@ -76,9 +76,10 @@ const WeddingTimeLine = () => {
       })
       setDataRender(mapData)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refItem])
   return (
-    <section ref={ref} className='mt-30 md:mt-40  text-center'>
+    <section ref={ref} className='mt-25 md:mt-40  text-center'>
       <SplitTextUI
         isRun={inView}
         duration={1}
@@ -86,9 +87,9 @@ const WeddingTimeLine = () => {
         className='text-[40px] leading-0 md:text-7xl text-black font-UVFAphroditePro'>
         Wedding Timeline
       </SplitTextUI>
-      <div className='relative h-full md:h-auto mt-30 md:mt-40'>
-        <div className='relative md:block hidden'>
-          <div
+      <div className='relative h-full md:h-auto mt-10 md:mt-30'>
+        <div className='relative md:block hidden h-[920px]'>
+          {/* <div
             className={`ab-center w-full h-full bg-black/30 z-10 ${
               inViewOne
                 ? 'animate-fadeInUpShow'
@@ -98,14 +99,12 @@ const WeddingTimeLine = () => {
             className={`w-full h-[920px] ${
               inViewOne ? 'animate-fadeInUpShow' : ''
             } opacity-0 transition-all duration-1000`}>
-            <img src='/assets/banner.png' alt='' className='object-cover h-full w-full' />
-          </div>
+            <img src='/assets/banner.webp' alt='' className='object-cover h-full w-full' />
+          </div> */}
         </div>
-        <div
-          className='relative md:ab-center max-w-[1200px] w-full z-10 h-[1866px] md:h-full flex md:flex-row flex-col'
-          ref={refOne}>
-          <div className='relative md:hidden block'>
-            <div
+        <div className='relative md:ab-center max-w-[900px] w-full z-10 h-[1866px] md:h-full flex md:flex-row flex-col'>
+          <div className='relative md:hidden block h-[920px]'>
+            {/* <div
               className={`ab-center w-full h-full bg-black/30 z-10 ${
                 inViewOne || inViewTwo
                   ? 'animate-fadeInUpShow'
@@ -116,11 +115,11 @@ const WeddingTimeLine = () => {
                 inViewOne || inViewTwo ? 'animate-fadeInUpShow' : ''
               } opacity-0 transition-all duration-1000`}>
               <img
-                src='/assets/banner.png'
+                src='/assets/banner.webp'
                 alt=''
                 className='object-cover h-full w-full'
               />
-            </div>
+            </div> */}
           </div>
           <div className='h-auto w-full md:w-[55%] relative  mx-auto '>
             <div
@@ -152,13 +151,11 @@ const WeddingTimeLine = () => {
                                 index === dataTimeLine.length - 1 ? '!-top-0.5' : ''
                               }`
                             : 'h-[249px]'
-                        } w-2 bg-white`}>
-                        <div className='ab-center w-6 h-6 rounded-full bg-gray-50 flex-center'>
-                          <div className='w-2 h-2 rounded-full bg-[#494745]'></div>
-                        </div>
+                        } w-2 bg-[#231f20]`}>
+                        <div className='ab-center w-6 h-6 rounded-full bg-[#231f20] flex-center'></div>
                       </div>
 
-                      <div className='max-w-[150px] md:max-w-[300px] text-left relative top-2'>
+                      <div className='max-w-[150px] md:max-w-[300px] text-left relative top-2 text-[#231f20]'>
                         <span className='text-base text-center md:text-nowrap'>
                           {title}
                         </span>
@@ -181,14 +178,14 @@ const WeddingTimeLine = () => {
             }`}>
             <div className='absolute h-auto md:h-full pb-20 pt-10 left-1/2 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2 flex flex-col w-full md:w-[351px] px-3 md:pr-10 gap-4 '>
               <img
-                src='/assets/date-time.png'
-                className={`flex-1 object-contain`}
+                src='/assets/date.webp'
+                className={`flex-1 object-contain rounded-xl`}
                 alt=''
               />
-              <div ref={refTwo} className='h-full w-full'>
+              <div className='h-full w-full'>
                 <img
-                  src='/assets/wedding-trai.png'
-                  className={`w-full h-[505px] object-cover opacity-0 animate-delay-2500 rounded-xl shadow-red
+                  src='/assets/moment/date-image.webp'
+                  className={`w-full h-[505px] object-cover opacity-0 animate-delay-2500 rounded-xl 
                     ${inViewThree ? 'animate-fadeInUpShow ' : ''}
                     `}
                   alt=''

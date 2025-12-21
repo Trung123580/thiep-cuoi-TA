@@ -97,7 +97,7 @@ export default function DragConstraints() {
                 isPlay ? 'animate-rotate shadow-red' : ''
               } flex-center  cursor-pointer`}>
               <img
-                src={!isPlay ? '/assets/btn-play-pause.jpg' : '/assets/btn-play.jpg'}
+                src={!isPlay ? '/assets/btn-play-pause.webp' : '/assets/btn-play.webp'}
                 alt=''
                 width={30}
                 className='rounded-full object-contain'

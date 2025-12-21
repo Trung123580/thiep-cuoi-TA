@@ -14,60 +14,58 @@ const WeddingMoments = () => {
   const { ref: ref1, inView: inView1 } = useInView({ threshold: 0.2 })
   const { ref: ref2, inView: inView2 } = useInView({ threshold: 0 })
   const { ref: ref3, inView: inView3 } = useInView({ threshold: 0.2 })
-  const { ref: ref4, inView: inView4 } = useInView({ threshold: 0 })
   const { ref: ref5, inView: inView5 } = useInView({ threshold: 0 })
   const { ref: ref6, inView: inView6 } = useInView({ threshold: 0 })
   const { ref: ref7, inView: inView7 } = useInView({ threshold: 0 })
   const { ref: ref8, inView: inView8 } = useInView({ threshold: 0 })
+  const { ref: ref9, inView: inView9 } = useInView({ threshold: 0.2 })
+  const { ref: ref10, inView: inView10 } = useInView({ threshold: 0.2 })
+  const { ref: ref11, inView: inView11 } = useInView({ threshold: 0.2 })
   // const { ref: ref9, inView: inView9 } = useInView({ threshold: 0.2 })
   console.log({ inView3, inView2 })
 
   return (
     <section ref={ref} className='flex-center flex-col md:mt-40 mt-20 px-3 md:px-0 '>
-      <div className='flex-center justify-between md:space-x-10'>
-        <img src='/assets/arrow.png' className='rotate-180 md:block hidden' alt='' />
+      <div className='flex-center gap-15 md:space-x-10 w-full'>
+        <img
+          src='/assets/arrow.png'
+          className='rotate-180 md:block hidden max-w-[250px]'
+          alt=''
+        />
         <SplitTextUI
           isRun={inView}
           duration={1}
           classGsap='title'
-          className='text-[40px] leading-0 md:text-7xl text-black font-UVFAphroditePro'>
+          className='text-[40px] leading-0 md:text-6xl text-black font-UVFAphroditePro'>
           Wedding Moments
         </SplitTextUI>
-        <img src='/assets/arrow.png' className='md:block hidden' alt='' />
+        <img src='/assets/arrow.png' className='md:block hidden max-w-[250px]' alt='' />
       </div>
       <div className='md:mt-40 mt-20 w-full md:max-w-[1400px] '>
         <div className='hidden'>
           <WrapperMasonry
             data={[
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
-              '/assets/banner.png',
+              '/assets/xem-them/anh-1.webp',
+              '/assets/xem-them/anh-2.webp',
+              '/assets/moment/anh-4.png',
+              '/assets/moment/anh-2.webp',
+              '/assets/xem-them/anh-4.webp',
+              '/assets/moment/anh-1.webp',
+              '/assets/xem-them/anh-5.webp',
+              '/assets/moment/anh-3.webp',
+              '/assets/xem-them/anh-6.webp',
+              '/assets/xem-them/anh-7.webp',
+              '/assets/moment/anh-6.webp',
+              '/assets/moment/anh-5.webp',
+              '/assets/xem-them/anh-8.webp',
+              '/assets/xem-them/anh-9.webp',
+              '/assets/xem-them/anh-10.webp',
+              '/assets/xem-them/anh-11.webp',
+              '/assets/moment/anh-7.webp',
             ]}
           />
         </div>
-        <div className='w-full'>
+        <div className='w-full mb-20 md:mb-0'>
           <div
             className={`flex relative justify-between opacity-0 *:w-[calc(50%_-_10px)] md:*:w-[calc(35%_-_50px)] ${
               inView2 || inView1 ? 'animate-fadeInLeft animation-delay-500' : ''
@@ -77,30 +75,50 @@ const WeddingMoments = () => {
               className={`${
                 inView1 ? 'animate-fadeInUpShow animation-delay-250' : ''
               } border opacity-0 border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 relative`}>
-              <img src='/assets/hai-ly/anh-1.jpg' className='' alt='' />
+              <img
+                src='/assets/moment/header-1.jpg'
+                className='object-cover w-full h-full'
+                alt=''
+              />
               <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
-              <div className='absolute md:bottom-36 bottom-24 h-[1px] md:right-[-8vw] right-[-16vw] w-2/3 rotate-90 bg-primary'></div>
+              <div className='absolute bottom-36 h-[1px] right-[-36%]  w-2/3 rotate-90 bg-primary'></div>
             </div>
             <div
               className={`${
                 inView2 || inView1 ? 'animate-fadeInDown animation-delay-500' : ''
               } border border-t-0 border-r-0 pt-0 pr-0 border-primary opacity-0 p-2 relative`}>
-              <img src='/assets/tien-anh/anh-1.jpg' className='md:block hidden' alt='' />
-              <img src='/assets/hai-ly/anh-2.jpg' className='md:hidden' alt='' />
+              <img
+                src='/assets/moment/header-2.jpg'
+                className='md:block hidden object-cover w-full h-full'
+                alt=''
+              />
+              <img
+                src='/assets/moment/header-2.jpg'
+                className='md:hidden object-cover w-full h-full'
+                alt=''
+              />
               <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
-              <div className='absolute md:bottom-36 bottom-24 h-[1px] md:right-[-8vw] right-[-16vw] w-2/3 rotate-90 bg-primary'></div>
+              <div className='absolute bottom-36 h-[1px] right-[-36%]  w-2/3 rotate-90 bg-primary'></div>
             </div>
             <div
               className={`${
                 inView2 || inView1 ? 'animate-fadeInRight animation-delay-1000' : ''
               } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative md:block hidden`}>
-              <img src='/assets/hai-ly/anh-2.jpg' className='' alt='' />
+              <img
+                src='/assets/moment/header-3.jpg'
+                className='object-cover w-full h-full'
+                alt=''
+              />
               <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
-              <div className='absolute md:bottom-36 bottom-24 h-[1px] md:right-[-8vw] right-[-16vw] w-2/3 rotate-90 bg-primary'></div>
+              <div className='absolute bottom-36 h-[1px] right-[-36%]  w-2/3 rotate-90 bg-primary'></div>
             </div>
             <div
               className={` border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 absolute md:relative w-[52vw]! left-1/2 -translate-x-1/2 top-[45%] md:hidden`}>
-              <img src='/assets/tien-anh/anh-1.jpg' className='' alt='' />
+              <img
+                src='/assets/moment/header-3.jpg'
+                className='object-cover w-full h-full'
+                alt=''
+              />
               <div className='absolute -top-2 h-[1px] right-4 w-2/4 bg-primary'></div>
               <div className='absolute bottom-24 h-[1px] right-[-19vw] w-2/3 rotate-90 bg-primary'></div>
             </div>
@@ -111,7 +129,7 @@ const WeddingMoments = () => {
               inView3 || inView2 ? 'animate-fadeInUpShow ' : ''
             }`}>
             <img
-              src='/assets/chung/anh-1.jpg'
+              src='/assets/chung/anh-1.webp'
               className='object-contain w-full h-full'
               alt='img'
             />
@@ -125,14 +143,28 @@ const WeddingMoments = () => {
               />
             </div>
           </div>
-          <div className='relative mt-14 md:mt-40 h-[630px] md:h-[700px] ' ref={ref3}>
-            <div className='flex items-end gap-4 md:gap-10 justify-between'>
+          <div className='relative mt-28 md:mt-40 h-[1330px] md:h-[700px] ' ref={ref3}>
+            <div className='flex items-end gap-4 md:flex-row flex-col md:gap-10 justify-between'>
               <div
+                ref={ref9}
                 className={`${
-                  inView4 ? 'animate-fadeInLeft' : ''
-                } w-[530px] h-[530px] rounded-full opacity-0 overflow-hidden`}>
+                  inView9 ? 'animate-fadeInLeft' : ''
+                } md:w-[530px] rounded-full opacity-0 overflow-hidden`}>
                 <motion.img
-                  src='/assets/chung/anh-2.jpg'
+                  src='/assets/chung/anh-2.png'
+                  className={`w-full h-full object-cover`}
+                  initial={{ objectPosition: 'center 40%' }}
+                  animate={{ objectPosition: 'center 20%' }}
+                  transition={{ duration: 1 }}
+                />
+              </div>
+              <div
+                ref={ref10}
+                className={`${
+                  inView10 ? 'animate-fadeInDown' : ''
+                } md:w-[400px] rounded-full  animation-delay-500 relative opacity-0 top-5 md:top-40 overflow-hidden`}>
+                <motion.img
+                  src='/assets/chung/anh-3.png'
                   className={`w-full h-full object-cover  `}
                   initial={{ objectPosition: 'center 40%' }}
                   animate={{ objectPosition: 'center 20%' }}
@@ -140,24 +172,12 @@ const WeddingMoments = () => {
                 />
               </div>
               <div
-                ref={ref4}
-                className={`${
-                  inView4 ? 'animate-fadeInDown' : ''
-                } w-[400px] h-[400px] rounded-full  animation-delay-500 relative opacity-0 top-20 md:top-40 overflow-hidden`}>
-                <motion.img
-                  src='/assets/chung/anh-3.jpg'
-                  className={`w-full h-full object-cover  `}
-                  initial={{ objectPosition: 'center 40%' }}
-                  animate={{ objectPosition: 'center 20%' }}
-                  transition={{ duration: 1 }}
-                />
-              </div>
-              <div
+                ref={ref11}
                 className={` ${
-                  inView4 ? 'animate-fadeInRight' : ''
-                } w-[250px] h-[250px] rounded-full relative animation-delay-1000 opacity-0 -top-36 md:-top-24 overflow-hidden`}>
+                  inView11 ? 'animate-fadeInRight' : ''
+                } md:w-[250px]  rounded-full relative animation-delay-1000 opacity-0 top-10 md:-top-24 overflow-hidden`}>
                 <motion.img
-                  src='/assets/chung/anh-4.jpg'
+                  src='/assets/chung/anh-4.png'
                   className={`w-full h-full object-cover `}
                   initial={{ objectPosition: 'center 40%' }}
                   animate={{ objectPosition: 'center 20%' }}
@@ -183,7 +203,7 @@ const WeddingMoments = () => {
                       inView6 ? 'animate-fadeInUp animation-delay-1000' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative md:top-0 top-40`}>
                     <img
-                      src='/assets/hai-ly/anh-2.jpg'
+                      src='/assets/moment/anh-6.webp'
                       className='h-auto md:h-[550px] w-full object-cover'
                       alt=''
                     />
@@ -195,7 +215,7 @@ const WeddingMoments = () => {
                       inView8 ? 'animate-fadeInRight animation-delay-1000' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative `}>
                     <img
-                      src='/assets/hai-ly/anh-2.jpg'
+                      src='/assets/moment/anh-7.webp'
                       className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
@@ -212,7 +232,7 @@ const WeddingMoments = () => {
                       inView7 ? 'animate-fadeInUp ' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
                     <img
-                      src='/assets/hai-ly/anh-2.jpg'
+                      src='/assets/moment/anh-3.webp'
                       className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
@@ -224,7 +244,7 @@ const WeddingMoments = () => {
                       inView8 || inView7 ? 'animate-fadeInRight animation-delay-250' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
                     <img
-                      src='/assets/hai-ly/anh-2.jpg'
+                      src='/assets/moment/anh-4.png'
                       className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
@@ -236,7 +256,7 @@ const WeddingMoments = () => {
                       inView8 ? 'animate-fadeInRight animation-delay-500' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary md:block hidden p-2 opacity-0 relative`}>
                     <img
-                      src='/assets/hai-ly/anh-2.jpg'
+                      src='/assets/moment/anh-5.webp'
                       className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
@@ -250,7 +270,7 @@ const WeddingMoments = () => {
                       inView7 ? 'animate-fadeInUp animation-delay-250' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary w-full p-2 opacity-0 relative`}>
                     <img
-                      src='/assets/hai-ly/anh-2.jpg'
+                      src='/assets/moment/anh-1.webp'
                       className='h-auto md:h-[550px]  w-full object-cover'
                       alt=''
                     />
@@ -262,7 +282,7 @@ const WeddingMoments = () => {
                       inView8 || inView7 ? 'animate-fadeInRight animation-delay-500' : ''
                     } border border-t-0 border-r-0 pt-0 pr-0 border-primary p-2 opacity-0 relative`}>
                     <img
-                      src='/assets/hai-ly/anh-2.jpg'
+                      src='/assets/moment/anh-2.webp'
                       className='h-auto md:h-[550px] w-full'
                       alt=''
                     />
@@ -286,18 +306,18 @@ const WeddingMoments = () => {
         <a
           ref={refXemThem}
           href='#gallery-1'
-          className='text-black relative z-10 flex items-center gap-10 md:gap-14 flex-col'>
+          className='text-black relative z-10 flex items-center gap-8 md:gap-14 flex-col animate-logoTextSkew'>
           <SplitTextUI
             isRun={inViewXemThem}
             duration={1}
             classGsap='title'
-            className='text-[40px] leading-0 md:text-5xl text-black font-UVFAphroditePro'>
+            className='text-[30px] leading-0 md:text-5xl text-black font-UVFAphroditePro'>
             Xem Thêm
           </SplitTextUI>
           <img
             className={`${
               inViewXemThem ? 'animate-fadeInDown' : ''
-            } w-18 md:w-24 animation-delay-500 opacity-0`}
+            } w-12 md:w-24 animation-delay-500 opacity-0`}
             src='/assets/arrow-bottom.png'
             alt=''
           />

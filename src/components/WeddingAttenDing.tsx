@@ -50,20 +50,20 @@ const WeddingAttenDing = () => {
 
         <div
           ref={refOne}
-          className='flex md:flex-row flex-col max-w-[1000px] mx-auto pt-4 pb-10 gap-5 mt-10 md:mt-20'>
+          className='flex md:flex-row flex-col max-w-[900px] justify-between mx-auto pt-4 pb-10 gap-13 mt-10 md:mt-20'>
           <div
-            className={`flex-1 flex-center opacity-0  animation-delay-250 ${
+            className={`flex-1 flex-center opacity-0 max-w-[450px] animation-delay-250 ${
               inViewOne ? 'animate-fadeInLeft' : ''
             }`}>
             <FormSubmit />
           </div>
           <div
-            className={`flex-1 h-[550px] animation-delay-1000 ${
+            className={`h-[650px] md:h-[550px] rounded-lg overflow-hidden animation-delay-1000 ${
               inViewOne ? 'animate-fadeInRight' : ''
             } opacity-0`}>
             <img
-              src='/assets/wedding-trai.png'
-              className='h-full w-full object-cover'
+              src='/assets/xem-them/anh-7.webp'
+              className='h-full object-cover md:object-contain rounded-xl w-full md:w-max '
               alt=''
             />
           </div>

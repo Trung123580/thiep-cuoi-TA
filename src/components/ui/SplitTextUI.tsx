@@ -62,7 +62,7 @@ const SplitTextUI = ({
   }, [delayText, duration, isRun, children]) // children trong deps để re-split nếu text thay đổi
 
   return (
-    <div ref={textRef} className={`relative md:left-0 left-3 ${className}`}>
+    <div ref={textRef} className={`relative ${className}`}>
       {children}
     </div>
   )

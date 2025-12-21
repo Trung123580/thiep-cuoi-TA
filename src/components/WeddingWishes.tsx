@@ -15,7 +15,7 @@ const WeddingWishes = () => {
     const blob = await response.blob()
     const link = document.createElement('a')
     link.href = URL.createObjectURL(blob)
-    link.download = 'qr-' + time + '.jpg'
+    link.download = 'qr-' + time + '.webp'
     link.click()
     URL.revokeObjectURL(link.href)
   }
@@ -48,7 +48,7 @@ const WeddingWishes = () => {
         của các bạn.
       </SplitTextUI>
 
-      <div className='flex gap-60 w-full mt-15 md:mt-30 md:flex-row flex-col'>
+      <div className='flex gap-10 md:gap-60 w-full mt-15 md:mt-30 md:flex-row flex-col px-[8vw] md:px-0'>
         <div
           ref={refOne}
           className={`${
@@ -58,7 +58,7 @@ const WeddingWishes = () => {
           <div className='shadow-medium/30 rounded-lg overflow-hidden'>
             <img
               id='qr-1'
-              src='/assets/qr-trai.jpg'
+              src='/assets/qr-trai.webp'
               className='w-full h-[450px] object-cover'
               alt=''
             />
@@ -87,7 +87,7 @@ const WeddingWishes = () => {
           <div className='shadow-medium/30  rounded-lg overflow-hidden'>
             <img
               id='qr-2'
-              src='/assets/qr-gai.jpg'
+              src='/assets/qr-gai.webp'
               className='w-full h-[450px] object-cover'
               alt=''
             />

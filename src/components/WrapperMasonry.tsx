@@ -20,7 +20,7 @@ const WrapperMasonry = ({
     const blob = await response.blob()
     const link = document.createElement('a')
     link.href = URL.createObjectURL(blob)
-    link.download = 'timanh-download-' + time + '.jpg'
+    link.download = 'timanh-download-' + time + '.webp'
     link.click()
     URL.revokeObjectURL(link.href)
   }
@@ -50,12 +50,6 @@ const WrapperMasonry = ({
             tpl: `<button class="f-button"><svg tabindex="-1" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5 5-5M12 4v12"></path></svg></button>`,
             click: () => downloadImage(),
           },
-          // 'btn-diploma': {
-          //   tpl: `<button class="f-button">🎓</button>`,
-          //   click: (fancybox, slide) => {
-          //     handleCheckDiplomaUser(slide)
-          //   }
-          // }
         },
         display: {
           left: ['infobar'],

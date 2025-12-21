@@ -10,10 +10,14 @@ const Banner = () => {
   })
 
   return (
-    <section className='relative h-[80vh] md:h-auto' ref={refMiddle}>
-      <div className='ab-center w-full h-full bg-black/30'></div>
+    <section className='relative h-screen ' ref={refMiddle}>
+      <div className='ab-center w-full h-full bg-black/20'></div>
       <div className='w-full h-full'>
-        <img src='/assets/banner.png' alt='' className='object-cover h-full' />
+        <img
+          src='/assets/chung/banner.webp'
+          alt=''
+          className='object-cover w-full h-full'
+        />
       </div>
       <div className='ab-center text-center top-[65%]'>
         {inViewMiddle && (
@@ -22,14 +26,14 @@ const Banner = () => {
               isRun={true}
               duration={2}
               classGsap='title'
-              className='text-[35vw] md:text-[300px] font-normal text-nowrap leading-[90px] md:leading-[250px] text-white font-SVNAstronout'>
-              Hải lý & Tiến Anh
+              className='text-[29vw] md:text-[300px] font-normal text-nowrap leading-[90px] md:leading-[250px] text-white font-SVNAstronout'>
+              Tiến Anh & Hải lý
             </SplitTextUI>
             <SplitTextUI
               isRun={true}
               classGsap='description'
               duration={0.3}
-              className='text-lg leading-6 md:text-xl font-semibold italic font-UTMBryantLG mt-14 text-wrap md:text-nowrap'>
+              className='text-base leading-6 md:text-xl font-semibold italic font-UTMBryantLG mt-14 text-wrap md:text-nowrap'>
               Ở thời điểm phù hợp nhất, mặc lên người bộ váy cưới đẹp nhất, gả cho người
               đáng tin cậy nhất
             </SplitTextUI>

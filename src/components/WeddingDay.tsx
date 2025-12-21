@@ -32,7 +32,7 @@ const data = {
       intimate: {
         title: 'TIỆC THÂN MẬT NHÀ GÁI',
         time: 'Tổ chức vào lúc 16 giờ 00 phút',
-        date: 'Thứ Bảy, ngày 28 tháng 12 năm 2025',
+        date: 'Chủ Nhật, ngày 28 tháng 12 năm 2025',
         lunarDate: '(Tức ngày 09 tháng 11 năm Ất Tỵ)',
         location: 'Tại: Tư Gia Nhà Gái',
         address: 'Quan Châm, Phú Nghĩa, Hà Nội',
@@ -51,7 +51,7 @@ const data = {
       guest: 'Quý khách',
       inviteLine1: 'Tới dự bữa Tiệc Thân Mật & tiệc Lễ Vu Quy chung vui',
       inviteLine2: 'cùng gia đình chúng tôi',
-      couple: 'Hải Lý & Tiến Anh',
+      couple: 'Tiến Anh & Hải Lý ',
       closing: 'Sự hiện diện của quý khách là niềm vinh dự cho gia đình chúng tôi !',
     },
   },
@@ -103,7 +103,7 @@ const WeddingDay = () => {
         isRun={inView}
         classGsap='description'
         duration={0.4}
-        className='text-xl italic text-black font-UTMBryantLG mt-16 md:mt-26 md:text-nowrap'>
+        className='text-xl italic  text-black font-UTMBryantLG mt-16 md:mt-26 md:text-nowrap'>
         Click vào sự kiện Nhà Gái - Nhà Trai để xem chi tiết lịch trình đám cưới của chúng
         mình nhé!
       </SplitTextUI>
@@ -149,8 +149,8 @@ const WeddingDay = () => {
             <img
               src={
                 activeSide === 'groom'
-                  ? './assets/wedding-trai.png'
-                  : './assets/wedding-gai.png'
+                  ? './assets/tien-anh/thiep-moi.webp'
+                  : './assets/hai-ly/thiep-moi.webp'
               }
               alt=''
               className='h-auto w-full object-cover'
@@ -184,7 +184,7 @@ const WeddingDay = () => {
               } animation-delay-500 opacity-0 `}>
               <Title
                 label={common.couple}
-                className='font-SVNAstronout! font-normal leading-[70px] md:leading-[80px] animate-decorFloatReverse1s text-[110px]! md:text-[135px]! my-6 text-gray-700'
+                className='font-SVNAstronout! font-normal leading-[70px] md:leading-[80px] animate-decorFloatReverse1s text-[100px]! md:text-[135px]! my-6 text-gray-700'
               />
             </div>
             <div
@@ -210,7 +210,7 @@ const WeddingDay = () => {
             </div>
             <div ref={refBottom} className='flex-center flex-col mt-4 space-y-3 '>
               <img
-                src='/assets/logo.png'
+                src='/assets/logo.webp'
                 alt=''
                 className={`object-contain opacity-0 ${
                   inViewBottom ? 'animate-fadeInUpShow' : ''
@@ -238,8 +238,8 @@ const WeddingDay = () => {
                 <Description label={side.wedding.address} />
               </div>
               <p
-                className='animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-9 leading-7 text-[3vw]
-               md:text-[1.14vw]
+                className='px-3 animate-fadeInUpShow opacity-0 animation-delay-2000 md:leading-9 leading-7 text-[3vw]
+               md:text-[1.14vw] xl:text-[1.01vw]
                mt-6 italic font-UVFAphroditePro'>
                 {common.closing}
               </p>
