@@ -45,7 +45,7 @@ const WeddingAttenDing = () => {
           classGsap='description'
           duration={0.1}
           className='text-xl italic text-black font-UTMBryantLG  md:text-nowrap'>
-          Minh & Thuỷ chuẩn bị đón tiếp bạn chu đáo nhất nha ♥️
+          Tiến & Lý chuẩn bị đón tiếp bạn chu đáo nhất nha ♥️
         </SplitTextUI>
 
         <div
