@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Button from './Button'
 import FormInput from './FormInput'
 import FormRadio from './FormRadio'
@@ -19,6 +19,14 @@ const FormSubmit = () => {
       setStatus('Có lỗi xảy ra, vui lòng thử lại.')
     }
   }
+  useEffect(() => {
+    if (status) {
+      setTimeout(() => {
+        setStatus('')
+      }, 700)
+    }
+  }, [status])
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus('')

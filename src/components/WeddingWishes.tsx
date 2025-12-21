@@ -55,7 +55,7 @@ const WeddingWishes = () => {
             inViewOne ? 'animate-fadeInLeft' : ''
           } animation-delay-500 opacity-0 flex-1`}>
           <h3 className='text-primary mb-10 text-5xl text-center capitalize'>Chú rể</h3>
-          <div className='shadow-medium/30 rounded-lg overflow-hidden'>
+          <div className=' rounded-lg overflow-hidden'>
             <img
               id='qr-1'
               src='/assets/qr-trai.webp'
@@ -63,7 +63,7 @@ const WeddingWishes = () => {
               alt=''
             />
           </div>
-          <div className='*:py-1 flex-1 flex text-black *:shadow-medium/30 *:rounded-sm mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base md:text-xl text-center capitalize'>
+          <div className='*:py-1 flex-1 flex text-black *:rounded-sm mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base md:text-xl text-center capitalize'>
             <button
               className='active:top-1 relative'
               onClick={() => downloadImage('qr-1')}>
@@ -84,7 +84,7 @@ const WeddingWishes = () => {
             inViewTwo ? 'animate-fadeInRight' : ''
           } animation-delay-500 opacity-0 flex-1`}>
           <h3 className='text-primary mb-10 text-5xl text-center capitalize'>Cô dâu</h3>
-          <div className='shadow-medium/30  rounded-lg overflow-hidden'>
+          <div className='  rounded-lg overflow-hidden'>
             <img
               id='qr-2'
               src='/assets/qr-gai.webp'
@@ -92,7 +92,7 @@ const WeddingWishes = () => {
               alt=''
             />
           </div>
-          <div className='*:py-1 flex *:shadow-medium/30 *:rounded-sm text-black mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base  md:text-xl text-center capitalize'>
+          <div className='*:py-1 flex *:rounded-sm text-black mt-5 *:bg-[#fffdf6] *:w-full gap-5 text-base  md:text-xl text-center capitalize'>
             <button
               onClick={() => downloadImage('qr-2')}
               className='active:top-1  relative'>

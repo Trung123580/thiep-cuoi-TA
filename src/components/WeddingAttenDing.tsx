@@ -29,7 +29,7 @@ const WeddingAttenDing = () => {
           isRun={inView}
           duration={1}
           classGsap='title'
-          className='text-[9vw] leading-0 md:text-7xl text-black font-UVFAphroditePro'>
+          className='text-[9vw] md:left-0 left-2 leading-0 md:text-7xl text-black font-UVFAphroditePro'>
           Wedding Attending
         </SplitTextUI>
         <SplitTextUI

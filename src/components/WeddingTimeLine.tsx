@@ -102,7 +102,7 @@ const WeddingTimeLine = () => {
             <img src='/assets/banner.webp' alt='' className='object-cover h-full w-full' />
           </div> */}
         </div>
-        <div className='relative md:ab-center max-w-[900px] w-full z-10 h-[1866px] md:h-full flex md:flex-row flex-col'>
+        <div className='relative md:ab-center max-w-[900px] w-full z-10 h-[1950px] md:h-full flex md:flex-row flex-col'>
           <div className='relative md:hidden block h-[920px]'>
             {/* <div
               className={`ab-center w-full h-full bg-black/30 z-10 ${
@@ -185,7 +185,7 @@ const WeddingTimeLine = () => {
               <div className='h-full w-full'>
                 <img
                   src='/assets/moment/date-image.webp'
-                  className={`w-full h-[505px] object-cover opacity-0 animate-delay-2500 rounded-xl 
+                  className={`w-full h-[600px] md:h-[505px] object-cover opacity-0 animate-delay-2500 rounded-xl 
                     ${inViewThree ? 'animate-fadeInUpShow ' : ''}
                     `}
                   alt=''
